@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloNet5", "Ch01\HelloNet5\HelloNet5.csproj", "{79E7C01F-EA2F-4B9A-AA34-700037D74328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloNet5", "Ch01\HelloNet5\HelloNet5.csproj", "{79E7C01F-EA2F-4B9A-AA34-700037D74328}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch01", "Ch01", "{16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevelNet6", "Ch01\TopLevelNet6\TopLevelNet6.csproj", "{F09B6C89-0FC7-47CA-85FB-3FD15A466E70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{79E7C01F-EA2F-4B9A-AA34-700037D74328}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E7C01F-EA2F-4B9A-AA34-700037D74328}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E7C01F-EA2F-4B9A-AA34-700037D74328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{79E7C01F-EA2F-4B9A-AA34-700037D74328} = {16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}
+		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70} = {16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
