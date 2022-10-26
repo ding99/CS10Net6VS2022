@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+System.Data.DataSet ds;
+HttpClient client;
 
 Console.WriteLine("== Start Chapter 2.");
 
