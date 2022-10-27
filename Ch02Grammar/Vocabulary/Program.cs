@@ -28,9 +28,10 @@ foreach (AssemblyName name in assembly.GetReferencedAssemblies()) {
 
 ICal cal1 = new Cal();
 Cal cal2 = new();
-Console.WriteLine($"type of cal : {cal1.GetType()}");
-Console.WriteLine($"type of cal : {cal2.GetType()}");
-Console.WriteLine($"type of Cal : {typeof(Cal)}. cal1 equals to Cal : {cal1.GetType() == typeof(Cal)}");
+Console.WriteLine($"type of {nameof(cal1)} : {cal1.GetType()}");
+Console.WriteLine($"type of {nameof(cal2)} : {cal2.GetType()}");
+Console.WriteLine($"type of Cal  : {typeof(Cal)}");
+Console.WriteLine($"{nameof(cal1)} == Cal? : {cal1.GetType() == typeof(Cal)}");
 Console.WriteLine($"type of ICal : {typeof(ICal)}");
 
 Console.ResetColor();
