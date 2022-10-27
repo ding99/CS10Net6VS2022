@@ -55,6 +55,14 @@ Console.WriteLine($"type of {nameof(origInt)} : {origInt.GetType()}");
 Console.WriteLine($"type of {nameof(fromInt)} : {fromInt.GetType()}");
 Console.WriteLine($"type of {nameof(intasObj)} : {intasObj.GetType()}");
 
+Console.ForegroundColor = ConsoleColor.Red;
+
+int decimalNotation = 2_000_000;
+int binaryNotation = 0b_0001_1110_1000_0100_1000_0000;
+int hexadecimalNotation = 0x_001E_8480;
+Console.WriteLine($"decimalNotion eqauls to binaryNotion: {decimalNotation == binaryNotation}");
+Console.WriteLine($"decimalNotion eqauls to hexadecimalNotation: {decimalNotation == hexadecimalNotation}");
+
 Console.ResetColor();
 Console.WriteLine("== End Chapter 2.");
 
