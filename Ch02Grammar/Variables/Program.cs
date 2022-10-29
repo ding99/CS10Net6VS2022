@@ -45,3 +45,8 @@ Console.WriteLine($"default(int) : [{default(int)}]");
 Console.WriteLine($"default(bool) : [{default(bool)}]");
 Console.WriteLine($"default(DateTime) : [{default(DateTime)}]");
 Console.WriteLine($"default(string) : [{default(string)}]");
+
+int n = 10;
+Console.WriteLine($"n has been set (by =) to [{n}]");
+n = default;
+Console.WriteLine($"n has been set (by default) to [{n}]");
