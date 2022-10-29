@@ -50,3 +50,13 @@ int n = 10;
 Console.WriteLine($"n has been set (by =) to [{n}]");
 n = default;
 Console.WriteLine($"n has been set (by default) to [{n}]");
+
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("- Array");
+string[] names = new[] { "Kate", "James", "Jason" };
+for(int i = 0; i < names.Length; i++) {
+    Console.Write($" {names[i]}");
+}
+Console.WriteLine();
+
+Console.ResetColor();
