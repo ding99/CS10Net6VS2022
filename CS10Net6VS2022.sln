@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopLevelNet6", "Ch01Hello\T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch02Grammar", "Ch02Grammar", "{C416FDDF-40D7-467D-8DCC-4AD14B14760E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabulary", "Ch02Grammar\Vocabulary\Vocabulary.csproj", "{47FFB271-D00A-4F72-AAA2-1306BF2B3771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocabulary", "Ch02Grammar\Vocabulary\Vocabulary.csproj", "{47FFB271-D00A-4F72-AAA2-1306BF2B3771}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Ch02Grammar\Variables\Variables.csproj", "{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{47FFB271-D00A-4F72-AAA2-1306BF2B3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47FFB271-D00A-4F72-AAA2-1306BF2B3771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47FFB271-D00A-4F72-AAA2-1306BF2B3771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{79E7C01F-EA2F-4B9A-AA34-700037D74328} = {16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}
 		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70} = {16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}
 		{47FFB271-D00A-4F72-AAA2-1306BF2B3771} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
+		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
