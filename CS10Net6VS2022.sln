@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocabulary", "Ch02Grammar\V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Ch02Grammar\Variables\Variables.csproj", "{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formatting", "Ch02Grammar\Formatting\Formatting.csproj", "{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{F09B6C89-0FC7-47CA-85FB-3FD15A466E70} = {16F1A2F2-1B57-4A12-80F2-AB5399A23A1E}
 		{47FFB271-D00A-4F72-AAA2-1306BF2B3771} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
+		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
