@@ -12,5 +12,6 @@ string formatted = string.Format(
     arg0: number,
     arg1: price * number);
 Console.WriteLine(formatted);
+Console.WriteLine($"{number} apples costs {price * number:C}");
 
 Console.ResetColor();
