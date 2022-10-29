@@ -1,4 +1,5 @@
-﻿
+﻿using System.Xml;
+
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("- Using object type");
 
@@ -30,4 +31,22 @@ something = new[] { 3, 5, 7 };
 Console.WriteLine($"- something (new[] {{3,5,7}}) type is {something.GetType()}");
 Console.WriteLine($"Length is {something.Length}");
 
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("- Using infer type");
 
+var xml1 = new XmlDocument();
+XmlDocument xml2 = new XmlDocument();
+Console.WriteLine($"type of xml1 is {xml1.GetType()}");
+Console.WriteLine($"type of xml2 is {xml2.GetType()}");
+
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+Console.WriteLine("- Default values");
+Console.WriteLine($"default(int) : [{default(int)}]");
+Console.WriteLine($"default(bool) : [{default(bool)}]");
+Console.WriteLine($"default(DateTime) : [{default(DateTime)}]");
+Console.WriteLine($"default(string) : [{default(string)}]");
+
+int n = 10;
+Console.WriteLine($"n has been set (by =) to [{n}]");
+n = default;
+Console.WriteLine($"n has been set (by default) to [{n}]");
