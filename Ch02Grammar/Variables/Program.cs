@@ -1,4 +1,5 @@
-﻿
+﻿using System.Xml;
+
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("- Using object type");
 
@@ -30,4 +31,7 @@ something = new[] { 3, 5, 7 };
 Console.WriteLine($"- something (new[] {{3,5,7}}) type is {something.GetType()}");
 Console.WriteLine($"Length is {something.Length}");
 
-
+var xml1 = new XmlDocument();
+XmlDocument xml2 = new XmlDocument();
+Console.WriteLine($"type of xml1 is {xml1.GetType()}");
+Console.WriteLine($"type of xml2 is {xml2.GetType()}");
