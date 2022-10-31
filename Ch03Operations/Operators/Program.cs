@@ -1,5 +1,8 @@
 ﻿using static System.Console;
 
+Console.ForegroundColor = ConsoleColor.Green;
+WriteLine("Unary Oprators");
 int a = 3;
 int b = a++;
-WriteLine($"a is {a}, b is {b}");
+int c = ++a;
+WriteLine($"a is {a}, b is {b}, c is {c}");
