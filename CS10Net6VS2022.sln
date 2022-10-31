@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch02Grammar", "Ch02Grammar"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocabulary", "Ch02Grammar\Vocabulary\Vocabulary.csproj", "{47FFB271-D00A-4F72-AAA2-1306BF2B3771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Ch02Grammar\Variables\Variables.csproj", "{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Variables", "Ch02Grammar\Variables\Variables.csproj", "{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formatting", "Ch02Grammar\Formatting\Formatting.csproj", "{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formatting", "Ch02Grammar\Formatting\Formatting.csproj", "{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arguments", "Ch02Grammar\Arguments\Arguments.csproj", "{E85D4832-5EB3-4507-81D4-A623F13CDA79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arguments", "Ch02Grammar\Arguments\Arguments.csproj", "{E85D4832-5EB3-4507-81D4-A623F13CDA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise02", "Ch02Grammar\Exercise02\Exercise02.csproj", "{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{E85D4832-5EB3-4507-81D4-A623F13CDA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85D4832-5EB3-4507-81D4-A623F13CDA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85D4832-5EB3-4507-81D4-A623F13CDA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{B69822FA-0EB4-4491-A1A9-1EBD1FE8F7F5} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 		{D8B4CC97-709C-46D3-9CBD-69F11B3F8B5F} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 		{E85D4832-5EB3-4507-81D4-A623F13CDA79} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
+		{E05BAC8F-01CA-4B1B-9D28-0ECB40CCF1F8} = {C416FDDF-40D7-467D-8DCC-4AD14B14760E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}

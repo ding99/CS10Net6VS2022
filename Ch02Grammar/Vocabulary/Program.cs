@@ -82,10 +82,11 @@ if (c + d == 0.3M) Console.WriteLine($"{c} + {d} equals {0.3M}");
 else Console.WriteLine($"{c} + {d} does NOT equal {0.3M}");
 
 Console.ForegroundColor = ConsoleColor.DarkYellow;
-Console.WriteLine($"Version: {Environment.Version}");
+Console.WriteLine($"CLR Version: {Environment.Version}");
 
 Console.ResetColor();
 Console.WriteLine("== End Chapter 2.");
+
 
 interface ICal {
     int Add(int x, int y);

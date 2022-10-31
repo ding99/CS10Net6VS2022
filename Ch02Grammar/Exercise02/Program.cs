@@ -1,0 +1,12 @@
+﻿Console.WriteLine("-- number of bytes, minValue, maxValue");
+Console.WriteLine($"sbyte\t: {sizeof(sbyte)}, {sbyte.MinValue}, {sbyte.MaxValue}");
+Console.WriteLine($"byte\t: {sizeof(byte)}, {byte.MinValue}, {byte.MaxValue}");
+Console.WriteLine($"short\t: {sizeof(short)}, {short.MinValue}, {short.MaxValue}");
+Console.WriteLine($"ushort\t: {sizeof(ushort)}, {ushort.MinValue}, {ushort.MaxValue}");
+Console.WriteLine($"int\t: {sizeof(int)}, {int.MinValue}, {int.MaxValue}");
+Console.WriteLine($"uint\t: {sizeof(uint)}, {uint.MinValue}, {uint.MaxValue}");
+Console.WriteLine($"long\t: {sizeof(long)}, {long.MinValue}, {long.MaxValue}");
+Console.WriteLine($"ulong\t: {sizeof(ulong)}, {ulong.MinValue}, {ulong.MaxValue}");
+Console.WriteLine($"float\t: {sizeof(float)}, {float.MinValue}, {float.MaxValue}");
+Console.WriteLine($"double\t: {sizeof(double)}, {double.MinValue}, {double.MaxValue}");
+Console.WriteLine($"decimal\t: {sizeof(decimal)}, {decimal.MinValue}, {decimal.MaxValue}");
