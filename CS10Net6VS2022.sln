@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastingConverting", "Ch03Op
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "Ch03Operations\HandlingExceptions\HandlingExceptions.csproj", "{67EC7E8E-9320-4B5D-AE07-0185201F502F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckingForOverflow", "Ch03Operations\CheckingForOverflow\CheckingForOverflow.csproj", "{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		{C429A00D-4FAA-4E0B-A1C5-D2B6C29722CF} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{67EC7E8E-9320-4B5D-AE07-0185201F502F} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
+		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}

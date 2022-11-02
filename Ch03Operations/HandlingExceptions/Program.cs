@@ -42,8 +42,9 @@ try {
     decimal amount = decimal.Parse(input);
     Console.WriteLine($"The amount is {amount}.");
 }
-catch (FormatException) when (input.Contains("$")) {
+catch (FormatException ex) when (input.Contains("$")) {
     Console.WriteLine("Amounts cannot use the dollar sign!");
+    Console.WriteLine(ex.Message);
 }
 catch (FormatException) {
     Console.WriteLine("Amounts must only contain digits!");
@@ -65,6 +66,21 @@ catch (FormatException) when (input.Contains("$")) {
 }
 catch (FormatException) {
     Console.WriteLine("Amounts must only contain digits!");
+}
+catch (Exception ex) {
+    Console.WriteLine($"{ex.GetType()} says {ex.Message}");
+}
+Console.WriteLine();
+
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+input = "230";
+Console.WriteLine($"input is {input}");
+try {
+    decimal amount = decimal.Parse(input);
+    Console.WriteLine($"The amount is {amount}.");
+}
+catch (FormatException) when (input.Contains("0")) {
+    Console.WriteLine("Amounts cannot use zero!");
 }
 catch (Exception ex) {
     Console.WriteLine($"{ex.GetType()} says {ex.Message}");
