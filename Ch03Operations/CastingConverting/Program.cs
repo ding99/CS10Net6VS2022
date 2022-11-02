@@ -42,4 +42,12 @@ foreach(double n in doubles) {
       arg1:Math.Round(value:n,digits:0,mode:MidpointRounding.AwayFromZero));
 }
 
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+Console.WriteLine("- ToString()");
+
+int number = 12; Console.WriteLine($"[{number}] to [{number.ToString()}]");
+bool boolean = true; Console.WriteLine($"[{boolean}] to [{boolean.ToString()}]");
+DateTime now = DateTime.Now; Console.WriteLine($"[{now}] to [{now.ToString()}]");
+object me = new(); Console.WriteLine($"[{me}] to [{me.ToString()}]");
+
 Console.ResetColor();
