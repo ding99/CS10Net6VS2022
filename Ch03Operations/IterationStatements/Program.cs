@@ -6,6 +6,4 @@ foreach(string name in names) {
     Console.WriteLine($"{name} has {name.Length} characters.");
 }
 
-
-
 Console.ResetColor();

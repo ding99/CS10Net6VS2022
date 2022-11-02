@@ -61,4 +61,11 @@ Console.WriteLine();
 string encoded = ToBase64String(binaryObject);
 Console.WriteLine($"Binary Object as Base64: {encoded}");
 
+Console.ForegroundColor = ConsoleColor.Cyan;
+int age = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 July 1980");
+Console.WriteLine($"I was born {age} years ago.");
+Console.WriteLine($"My birthday is {birthday}.");
+Console.WriteLine($"My birthday is {birthday:D}");
+
 Console.ResetColor();
