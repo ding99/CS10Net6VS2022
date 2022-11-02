@@ -36,4 +36,29 @@ foreach(double n in doubles) {
     Console.WriteLine($"ToInt32({n}) is {ToInt32(n)}");
 }
 
+foreach(double n in doubles) {
+    Console.WriteLine(format:"Math.Round({0}, 0, MidpointRounding.AwayFromZero) is {1}",
+      arg0:n,
+      arg1:Math.Round(value:n,digits:0,mode:MidpointRounding.AwayFromZero));
+}
+
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+Console.WriteLine("- ToString()");
+
+int number = 12; Console.WriteLine($"[{number}] to [{number.ToString()}]");
+bool boolean = true; Console.WriteLine($"[{boolean}] to [{boolean.ToString()}]");
+DateTime now = DateTime.Now; Console.WriteLine($"[{now}] to [{now.ToString()}]");
+object me = new(); Console.WriteLine($"[{me}] to [{me.ToString()}]");
+
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+byte[] binaryObject = new byte[128];
+(new Random()).NextBytes(binaryObject);
+Console.WriteLine("Binary Object as bytes:");
+for (int i = 0; i < binaryObject.Length; i++) {
+    Console.Write($"{binaryObject[i]:X} ");
+}
+Console.WriteLine();
+string encoded = ToBase64String(binaryObject);
+Console.WriteLine($"Binary Object as Base64: {encoded}");
+
 Console.ResetColor();
