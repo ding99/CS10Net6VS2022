@@ -50,4 +50,15 @@ bool boolean = true; Console.WriteLine($"[{boolean}] to [{boolean.ToString()}]")
 DateTime now = DateTime.Now; Console.WriteLine($"[{now}] to [{now.ToString()}]");
 object me = new(); Console.WriteLine($"[{me}] to [{me.ToString()}]");
 
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+byte[] binaryObject = new byte[128];
+(new Random()).NextBytes(binaryObject);
+Console.WriteLine("Binary Object as bytes:");
+for (int i = 0; i < binaryObject.Length; i++) {
+    Console.Write($"{binaryObject[i]:X} ");
+}
+Console.WriteLine();
+string encoded = ToBase64String(binaryObject);
+Console.WriteLine($"Binary Object as Base64: {encoded}");
+
 Console.ResetColor();
