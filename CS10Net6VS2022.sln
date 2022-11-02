@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitwiseAndShiftOperators", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectionStatements", "Ch03Operations\SelectionStatements\SelectionStatements.csproj", "{7DC95C77-664F-46C3-963C-CCFFFB88C57B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationStatements", "Ch03Operations\IterationStatements\IterationStatements.csproj", "{C429A00D-4FAA-4E0B-A1C5-D2B6C29722CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IterationStatements", "Ch03Operations\IterationStatements\IterationStatements.csproj", "{C429A00D-4FAA-4E0B-A1C5-D2B6C29722CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingConverting", "Ch03Operations\CastingConverting\CastingConverting.csproj", "{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastingConverting", "Ch03Operations\CastingConverting\CastingConverting.csproj", "{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "Ch03Operations\HandlingExceptions\HandlingExceptions.csproj", "{67EC7E8E-9320-4B5D-AE07-0185201F502F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67EC7E8E-9320-4B5D-AE07-0185201F502F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{7DC95C77-664F-46C3-963C-CCFFFB88C57B} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{C429A00D-4FAA-4E0B-A1C5-D2B6C29722CF} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
+		{67EC7E8E-9320-4B5D-AE07-0185201F502F} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
