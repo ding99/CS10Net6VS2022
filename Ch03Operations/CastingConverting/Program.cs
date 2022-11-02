@@ -68,4 +68,13 @@ Console.WriteLine($"I was born {age} years ago.");
 Console.WriteLine($"My birthday is {birthday}.");
 Console.WriteLine($"My birthday is {birthday:D}");
 
+string v1 = "abc";
+try {
+    int count = int.Parse(v1);
+    Console.WriteLine($"parse {v1} to {count}");
+}
+catch(Exception ex) {
+    Console.WriteLine(ex.Message);
+}
+
 Console.ResetColor();
