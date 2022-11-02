@@ -1,4 +1,6 @@
-﻿Console.ForegroundColor = ConsoleColor.Yellow;
+﻿using static System.Convert;
+
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("- Casting Converting");
 
 int a = 10;
@@ -21,5 +23,12 @@ Console.WriteLine($"Cast long {e} to int {f}");
 e = 5_000_000_000;
 f = (int)e;
 Console.WriteLine($"Cast long {e} to int {f}");
+
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("- using System.Convert");
+
+double g = 9.8;
+int h = ToInt32(g);
+Console.WriteLine($"g is {g} and ToInt(g) is {h}");
 
 Console.ResetColor();
