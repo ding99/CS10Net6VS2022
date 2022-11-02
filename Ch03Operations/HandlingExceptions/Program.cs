@@ -33,6 +33,42 @@ catch (FormatException) {
 catch (Exception ex) {
     Console.WriteLine($"{ex.GetType()} says {ex.Message}");
 }
+Console.WriteLine();
+
+Console.ForegroundColor = ConsoleColor.Magenta;
+input = "$230";
+Console.WriteLine($"input is {input}");
+try {
+    decimal amount = decimal.Parse(input);
+    Console.WriteLine($"The amount is {amount}.");
+}
+catch (FormatException) when (input.Contains("$")) {
+    Console.WriteLine("Amounts cannot use the dollar sign!");
+}
+catch (FormatException) {
+    Console.WriteLine("Amounts must only contain digits!");
+}
+catch (Exception ex) {
+    Console.WriteLine($"{ex.GetType()} says {ex.Message}");
+}
+Console.WriteLine();
+
+Console.ForegroundColor = ConsoleColor.Green;
+input = "a230";
+Console.WriteLine($"input is {input}");
+try {
+    decimal amount = decimal.Parse(input);
+    Console.WriteLine($"The amount is {amount}.");
+}
+catch (FormatException) when (input.Contains("$")) {
+    Console.WriteLine("Amounts cannot use the dollar sign!");
+}
+catch (FormatException) {
+    Console.WriteLine("Amounts must only contain digits!");
+}
+catch (Exception ex) {
+    Console.WriteLine($"{ex.GetType()} says {ex.Message}");
+}
 Console.WriteLine("After parsing");
 
 Console.ResetColor();
