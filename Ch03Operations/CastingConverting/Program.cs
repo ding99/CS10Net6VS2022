@@ -36,4 +36,10 @@ foreach(double n in doubles) {
     Console.WriteLine($"ToInt32({n}) is {ToInt32(n)}");
 }
 
+foreach(double n in doubles) {
+    Console.WriteLine(format:"Math.Round({0}, 0, MidpointRounding.AwayFromZero) is {1}",
+      arg0:n,
+      arg1:Math.Round(value:n,digits:0,mode:MidpointRounding.AwayFromZero));
+}
+
 Console.ResetColor();
