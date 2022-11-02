@@ -60,21 +60,37 @@ else {
     s = File.Open(Path.Combine(path, "file.txt"), FileMode.OpenOrCreate, FileAccess.Write);
 }
 
-string message;
+string message1;
 switch (s) {
 case FileStream writebaleFile when s.CanWrite:
-    message = "The stream is a file that I can write to.";
+    message1 = "The stream is a file that I can write to.";
     break;
 case FileStream readOnlyFile:
-    message = "The stream is a read-only file.";
+    message1 = "The stream is a read-only file.";
+    break;
+case MemoryStream ms:
+    message1 = "The stream is a memory address.";
     break;
 default:
-    message = "The stream is some other type.";
+    message1 = "The stream is some other type.";
     break;
 case null:
-    message = "The stream is null.";
+    message1 = "The stream is null.";
     break;
 }
-Console.WriteLine(message);
+Console.WriteLine(message1);
+
+string message2 = s switch {
+    FileStream writeableFile when s.CanWrite
+    => "The stream is a file what I can write to.",
+    FileStream readOnlyFile
+    => "The stream is a read-only file.",
+    MemoryStream ms
+    => "The stream is a memory address.",
+    null => "The stream is null.",
+    _
+    => "The stream is some other type."
+};
+Console.WriteLine(message2);
 
 Console.ResetColor();
