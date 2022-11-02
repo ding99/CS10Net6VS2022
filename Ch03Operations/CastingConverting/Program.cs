@@ -61,4 +61,39 @@ Console.WriteLine();
 string encoded = ToBase64String(binaryObject);
 Console.WriteLine($"Binary Object as Base64: {encoded}");
 
+Console.ForegroundColor = ConsoleColor.Cyan;
+int age = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 July 1980");
+Console.WriteLine($"I was born {age} years ago.");
+Console.WriteLine($"My birthday is {birthday}.");
+Console.WriteLine($"My birthday is {birthday:D}");
+
+string v1 = "abc";
+try {
+    int count = int.Parse(v1);
+    Console.WriteLine($"parse {v1} to {count}");
+}
+catch(Exception ex) {
+    Console.WriteLine(ex.Message);
+}
+
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+string? input = "12";
+Console.WriteLine($"- How many eggs are there? (using TryParse). input is {input}");
+if(int.TryParse(input, out int eggs)) {
+    Console.WriteLine($"There are {eggs} eggs.");
+}
+else {
+    Console.WriteLine("I could not parse the input.");
+}
+
+input = "Twelve";
+Console.WriteLine($"- How many eggs are there? (using TryParse). input is {input}");
+if (int.TryParse(input, out int eggs2)) {
+    Console.WriteLine($"There are {eggs2} eggs.");
+}
+else {
+    Console.WriteLine("I could not parse the input.");
+}
+
 Console.ResetColor();
