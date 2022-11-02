@@ -77,4 +77,15 @@ catch(Exception ex) {
     Console.WriteLine(ex.Message);
 }
 
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+string? input = "12";
+Console.WriteLine($"- How many eggs are there? (using TryParse). input is {input}");
+if(int.TryParse(input, out int eggs)) {
+    Console.WriteLine($"There are {eggs} eggs.");
+}
+else {
+    Console.WriteLine("I could not parse the input.");
+}
+
+
 Console.ResetColor();
