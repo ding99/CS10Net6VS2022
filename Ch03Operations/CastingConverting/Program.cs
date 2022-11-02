@@ -87,5 +87,13 @@ else {
     Console.WriteLine("I could not parse the input.");
 }
 
+input = "Twelve";
+Console.WriteLine($"- How many eggs are there? (using TryParse). input is {input}");
+if (int.TryParse(input, out int eggs2)) {
+    Console.WriteLine($"There are {eggs2} eggs.");
+}
+else {
+    Console.WriteLine("I could not parse the input.");
+}
 
 Console.ResetColor();
