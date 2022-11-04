@@ -34,15 +34,26 @@ static string CardinalToOrdinal(int number) {
 }
 
 static void RunFactorials() {
-    for (int i = 0; i < 10; i++) {
-        Console.WriteLine($"{i}! = {Factorial(i):N0}");
+    for (int i = 0; i < 15; i++) {
+        try {
+            Console.WriteLine($"{i}! = {Factorial(i):N0}");
+        }
+        catch(OverflowException) {
+            Console.WriteLine($"{i}! is too big for a 32-bit integer.");
+        }
     }
 }
 
 static int Factorial(int n) {
-    return n switch {
-        0 => 0,
-        1 => 1,
-        _ => Factorial(n - 1) * n
-    };
+    if (n < 1) {
+        return 0;
+    }
+    else if (n == 1) {
+        return 1;
+    }
+    else {
+        checked {
+            return Factorial(n - 1) * n;
+        }
+    }
 }
