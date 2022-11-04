@@ -33,11 +33,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IterationStatements", "Ch03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastingConverting", "Ch03Operations\CastingConverting\CastingConverting.csproj", "{CF787E65-7DDD-4EC7-9B97-D2F1C79A90B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "Ch03Operations\HandlingExceptions\HandlingExceptions.csproj", "{67EC7E8E-9320-4B5D-AE07-0185201F502F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandlingExceptions", "Ch03Operations\HandlingExceptions\HandlingExceptions.csproj", "{67EC7E8E-9320-4B5D-AE07-0185201F502F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckingForOverflow", "Ch03Operations\CheckingForOverflow\CheckingForOverflow.csproj", "{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckingForOverflow", "Ch03Operations\CheckingForOverflow\CheckingForOverflow.csproj", "{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise03", "Ch03Operations\Exercise03\Exercise03.csproj", "{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise03", "Ch03Operations\Exercise03\Exercise03.csproj", "{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch4Functions", "Ch4Functions", "{7DB7E907-39D9-4ABD-9268-B684678C5355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WritingFunctions", "Ch04Functions\WritingFunctions\WritingFunctions.csproj", "{0A41594B-84A2-42DE-8AFE-8F2399B518E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,10 @@ Global
 		{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A41594B-84A2-42DE-8AFE-8F2399B518E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A41594B-84A2-42DE-8AFE-8F2399B518E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A41594B-84A2-42DE-8AFE-8F2399B518E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A41594B-84A2-42DE-8AFE-8F2399B518E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,7 @@ Global
 		{67EC7E8E-9320-4B5D-AE07-0185201F502F} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{8DD4E4BB-2BE6-483E-9E65-3A6E1F19B8DF} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
 		{FCE36855-C987-4F81-9AB8-FBF94F54F0E0} = {CDF60B44-345E-4C54-88DA-6FEBF6607502}
+		{0A41594B-84A2-42DE-8AFE-8F2399B518E6} = {7DB7E907-39D9-4ABD-9268-B684678C5355}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
