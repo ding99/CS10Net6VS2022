@@ -1,6 +1,10 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green;
 
+Console.WriteLine("- Ordinals");
 RunCardinalToOrdinal();
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+RunFactorials();
 
 Console.ResetColor();
 
@@ -27,4 +31,18 @@ static string CardinalToOrdinal(int number) {
         };
         return $"{number}{suffix}";
     }
+}
+
+static void RunFactorials() {
+    for (int i = 0; i < 10; i++) {
+        Console.WriteLine($"{i}! = {Factorial(i):N0}");
+    }
+}
+
+static int Factorial(int n) {
+    return n switch {
+        0 => 0,
+        1 => 1,
+        _ => Factorial(n - 1) * n
+    };
 }
