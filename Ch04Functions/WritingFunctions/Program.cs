@@ -1,10 +1,15 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green;
 
-int n = 15;
-var result = CardinalToOrdinal(n);
-Console.WriteLine($"The Original of Cardianl {n} is {result}");
+RunCardinalToOrdinal();
 
 Console.ResetColor();
+
+static void RunCardinalToOrdinal() {
+    for(int i = 1; i <= 40; i++) {
+        Console.Write($"{CardinalToOrdinal(i)} ");
+    }
+    Console.WriteLine();
+}
 
 static string CardinalToOrdinal(int number) {
     switch (number) {
