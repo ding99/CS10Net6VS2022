@@ -1,13 +1,18 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green;
 
-Console.WriteLine("- Ordinals");
-RunCardinalToOrdinal();
+//Console.WriteLine("- Ordinals");
+//RunCardinalToOrdinal();
 
-Console.ForegroundColor = ConsoleColor.Cyan;
-RunFactorials();
+//Console.ForegroundColor = ConsoleColor.Cyan;
+//RunFactorials();
+
+Console.ForegroundColor = ConsoleColor.Yellow;
+//RunFibImperative();
+RunFibFuntional();
 
 Console.ResetColor();
 
+#region Ordinal
 static void RunCardinalToOrdinal() {
     for(int i = 1; i <= 40; i++) {
         Console.Write($"{CardinalToOrdinal(i)} ");
@@ -32,7 +37,9 @@ static string CardinalToOrdinal(int number) {
         return $"{number}{suffix}";
     }
 }
+#endregion
 
+#region Factorial
 static void RunFactorials() {
     for (int i = 0; i < 15; i++) {
         try {
@@ -57,3 +64,36 @@ static int Factorial(int n) {
         }
     }
 }
+#endregion
+
+#region Fibonacci
+static void RunFibImperative() {
+    for (int i = 1; i < 30; i++) {
+        Console.WriteLine("The {0} term of the Fibonacci sequence is {1:N0}.", arg0:CardinalToOrdinal(i), arg1:FibImperative(term:i));
+    }
+}
+
+static int FibImperative(int term) {
+    if (term == 1) {
+        return 0;
+    }
+    else if (term == 2) {
+        return 1;
+    } else {
+        return FibImperative(term - 1) + FibImperative(term - 2);
+    }
+}
+
+static void RunFibFuntional() {
+    for (int i = 1; i < 30; i++) {
+        Console.WriteLine("The {0} term of the Fibonacci sequence is {1:N0}.", arg0: CardinalToOrdinal(i), arg1: FibImperative(term: i));
+    }
+}
+
+static int FibFunctional(int term) =>
+    term switch {
+        1 => 0,
+        2 => 1,
+        _ => FibFunctional(term - 1) + FibFunctional(term - 2)
+    };
+#endregion
