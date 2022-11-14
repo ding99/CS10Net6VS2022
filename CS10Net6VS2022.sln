@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckingForOverflow", "Ch03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise03", "Ch03Operations\Exercise03\Exercise03.csproj", "{FCE36855-C987-4F81-9AB8-FBF94F54F0E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch4Functions", "Ch4Functions", "{7DB7E907-39D9-4ABD-9268-B684678C5355}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch04Functions", "Ch04Functions", "{7DB7E907-39D9-4ABD-9268-B684678C5355}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WritingFunctions", "Ch04Functions\WritingFunctions\WritingFunctions.csproj", "{0A41594B-84A2-42DE-8AFE-8F2399B518E6}"
 EndProject
@@ -51,9 +51,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLib", "Ch04Functi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorLibUnitTests", "Ch04Functions\CalculatorLibUnitTests\CalculatorLibUnitTests.csproj", "{B5C4C46C-C1E3-4186-AECB-DEB880AA26BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandlingLib", "Ch04Functions\CallStackExceptionHandlingLib\CallStackExceptionHandlingLib.csproj", "{5B489D3A-1250-4DD6-82A2-29F0D29A707A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallStackExceptionHandlingLib", "Ch04Functions\CallStackExceptionHandlingLib\CallStackExceptionHandlingLib.csproj", "{5B489D3A-1250-4DD6-82A2-29F0D29A707A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandling", "Ch04Functions\CallStackExceptionHandling\CallStackExceptionHandling.csproj", "{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallStackExceptionHandling", "Ch04Functions\CallStackExceptionHandling\CallStackExceptionHandling.csproj", "{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch05Types", "Ch05Types", "{9C428C0C-A322-44E7-A0F3-4B9392820F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibrary", "Ch05Types\PacktLibrary\PacktLibrary.csproj", "{785A3610-288D-47AB-B747-6390B21F2768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +153,10 @@ Global
 		{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785A3610-288D-47AB-B747-6390B21F2768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A3610-288D-47AB-B747-6390B21F2768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785A3610-288D-47AB-B747-6390B21F2768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785A3610-288D-47AB-B747-6390B21F2768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +184,7 @@ Global
 		{B5C4C46C-C1E3-4186-AECB-DEB880AA26BF} = {7DB7E907-39D9-4ABD-9268-B684678C5355}
 		{5B489D3A-1250-4DD6-82A2-29F0D29A707A} = {7DB7E907-39D9-4ABD-9268-B684678C5355}
 		{F06A06E0-3FF7-4B4B-880A-19A9C26A3E93} = {7DB7E907-39D9-4ABD-9268-B684678C5355}
+		{785A3610-288D-47AB-B747-6390B21F2768} = {9C428C0C-A322-44E7-A0F3-4B9392820F12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
