@@ -11,5 +11,12 @@ static void Alpha() {
 
 static void Beta() {
     Console.WriteLine("In Beta");
-    Calculator.Gamma();
+    try {
+        Calculator.Gamma();
+    }
+    catch (Exception ex) {
+        Console.WriteLine($"Caught this: {ex.Message}");
+//        throw ex;
+        throw;
+    }
 }
