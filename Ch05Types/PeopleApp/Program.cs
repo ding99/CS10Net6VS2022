@@ -59,4 +59,12 @@ Console.WriteLine("{0} earned {1:C} interest.", gerrierAccount.AccountName, gerr
 Console.WriteLine($"{bob.Name} is a {Person.Species}.");
 Console.WriteLine($"MaxValue Int32 is {Int32.MaxValue}. PI is {Math.PI}");
 
+Console.ForegroundColor = ConsoleColor.Cyan;
+var blankPerson = new Person();
+Console.WriteLine("{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+    blankPerson.Name,
+    blankPerson.HomePlanet,
+    blankPerson.Instantiated
+);
+
 Console.ResetColor ();

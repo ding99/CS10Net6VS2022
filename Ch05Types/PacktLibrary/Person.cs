@@ -7,6 +7,7 @@ namespace Packt.Shared {
         public const string Species = "Homo Sapien";
 
         public readonly string HomePlanet = "Earth";
+        public readonly DateTime Instantiated;
 
         public string Name;
         public DateTime DateOfBirth;
@@ -14,5 +15,11 @@ namespace Packt.Shared {
         public WondersOfTheAncientWorld BucketList;
 
         public List<Person> Children = new List<Person>();
+
+        public Person()
+        {
+            Name = "Unknown";
+            Instantiated = DateTime.Now;
+        }
     }
 }
