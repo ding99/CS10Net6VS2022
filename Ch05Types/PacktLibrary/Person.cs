@@ -18,8 +18,15 @@ namespace Packt.Shared {
 
         public Person()
         {
-            Name = "Unknown";
-            Instantiated = DateTime.Now;
+            this.Name = "Unknown";
+            this.Instantiated = DateTime.Now;
+        }
+
+        public Person(string initialName, string homePlanet)
+        {
+            this.Name = initialName;
+            this.HomePlanet = homePlanet;
+            this.Instantiated = DateTime.Now;
         }
     }
 }
