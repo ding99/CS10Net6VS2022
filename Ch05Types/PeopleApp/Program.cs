@@ -23,6 +23,8 @@ Console.WriteLine ("{0} was born on {1:d MM yy}",
     arg0: bob.Name,
     arg1: bob.DateOfBirth);
 
+Console.WriteLine($"{bob.Name} was born on {bob.HomePlanet}");
+
 Console.WriteLine ("{0}'s favorite wonder is {1}. Its integer is {2}.",
     bob.Name,
     bob.FavoriteAncientWonder,

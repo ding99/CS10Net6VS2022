@@ -6,6 +6,8 @@ namespace Packt.Shared {
     {
         public const string Species = "Homo Sapien";
 
+        public readonly string HomePlanet = "Earth";
+
         public string Name;
         public DateTime DateOfBirth;
         public WondersOfTheAncientWorld FavoriteAncientWonder;
