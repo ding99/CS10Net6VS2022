@@ -30,4 +30,17 @@ Console.WriteLine ("{0}'s favorite wonder is {1}. Its integer is {2}.",
 
 Console.WriteLine ($"{bob.Name}'s bucket list is {bob.BucketList}");
 
+bob.Children.Add(new Person { Name = "Alfred" });
+bob.Children.Add(new Person { Name = "Zoe" });
+Console.WriteLine($"{bob.Name} has {bob.Children.Count} children:");
+for(int idx = 0; idx < bob.Children.Count; idx++)
+{
+    Console.WriteLine($"  {bob.Children[idx].Name}");
+}
+
+foreach(var c in bob.Children)
+{
+    Console.WriteLine($"  ({c.Name})");
+}
+
 Console.ResetColor ();
