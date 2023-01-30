@@ -54,4 +54,7 @@ var gerrierAccount = new BankAccount
 };
 Console.WriteLine("{0} earned {1:C} interest.", gerrierAccount.AccountName, gerrierAccount.Balance * BankAccount.InterestRate);
 
+Console.WriteLine($"{bob.Name} is a {Person.Species}.");
+Console.WriteLine($"MaxValue Int32 is {Int32.MaxValue}. PI is {Math.PI}");
+
 Console.ResetColor ();
