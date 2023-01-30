@@ -38,9 +38,20 @@ for(int idx = 0; idx < bob.Children.Count; idx++)
     Console.WriteLine($"  {bob.Children[idx].Name}");
 }
 
-foreach(var c in bob.Children)
+BankAccount.InterestRate = 0.012M;
+
+var jonesAccount = new BankAccount
 {
-    Console.WriteLine($"  ({c.Name})");
-}
+    AccountName = "Mrs.Jones",
+    Balance = 2400
+};
+Console.WriteLine("{0} earned {1:C} interest.", jonesAccount.AccountName, jonesAccount.Balance * BankAccount.InterestRate);
+
+var gerrierAccount = new BankAccount
+{
+    AccountName = "Ms.Gerrier",
+    Balance = 98
+};
+Console.WriteLine("{0} earned {1:C} interest.", gerrierAccount.AccountName, gerrierAccount.Balance * BankAccount.InterestRate);
 
 Console.ResetColor ();
