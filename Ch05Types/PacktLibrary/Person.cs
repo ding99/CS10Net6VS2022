@@ -88,6 +88,14 @@ namespace Packt.Shared {
                 arg2: active);
         }
 
+        public void PassingParameters(int x, ref int y, out int z)
+        {
+            z = 99;
+            x++;
+            y++;
+            z++;
+        }
+
         #endregion
 
         #endregion
