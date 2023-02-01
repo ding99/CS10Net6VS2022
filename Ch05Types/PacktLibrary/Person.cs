@@ -18,8 +18,36 @@ namespace Packt.Shared {
 
         public Person()
         {
-            Name = "Unknown";
-            Instantiated = DateTime.Now;
+            this.Name = "Unknown";
+            this.Instantiated = DateTime.Now;
         }
+
+        public Person(string initialName, string homePlanet)
+        {
+            this.Name = initialName;
+            this.HomePlanet = homePlanet;
+            this.Instantiated = DateTime.Now;
+        }
+
+        public void WriteToConsole()
+        {
+            Console.WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
+        }
+
+        public string GetOrigin()
+        {
+            return $"{this.Name} was born on {HomePlanet}.";
+        }
+
+        public (string, int) GetFruit()
+        {
+            return ("Apples", 5);
+        }
+
+        public (string Name, int Number) GetNamedFruit()
+        {
+            return (Name: "Apples", Number: 5);
+        }
+
     }
 }
