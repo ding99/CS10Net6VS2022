@@ -92,4 +92,8 @@ Console.ForegroundColor = ConsoleColor.DarkYellow;
 Console.WriteLine(bob.SayHello());
 Console.WriteLine(bob.SayHello("Emily"));
 
+Console.WriteLine(bob.OptionalParameters());
+Console.WriteLine(bob.OptionalParameters("Jump!", 98.5));
+Console.WriteLine(bob.OptionalParameters(number:30.7, command:"Hide!"));
+
 Console.ResetColor ();
