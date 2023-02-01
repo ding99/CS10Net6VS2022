@@ -38,5 +38,16 @@ namespace Packt.Shared {
         {
             return $"{this.Name} was born on {HomePlanet}.";
         }
+
+        public (string, int) GetFruit()
+        {
+            return ("Apples", 5);
+        }
+
+        public (string Name, int Number) GetNamedFruit()
+        {
+            return (Name: "Apples", Number: 5);
+        }
+
     }
 }

@@ -76,5 +76,11 @@ Console.WriteLine("{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
 Console.ForegroundColor = ConsoleColor.Green;
 bob.WriteToConsole();
 Console.WriteLine(bob.GetOrigin());
+(string, int)fruit = bob.GetFruit();
+Console.WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+var fruitNamed = bob.GetNamedFruit();
+Console.WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}");
+(var fruitName, var fruitNumber) = bob.GetFruit();
+Console.WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
 
 Console.ResetColor ();
