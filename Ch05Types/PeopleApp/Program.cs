@@ -83,4 +83,9 @@ Console.WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}");
 (var fruitName, var fruitNumber) = bob.GetFruit();
 Console.WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
 
+var (name1, dob1) = bob;
+Console.WriteLine($"Deconstructed: {name1}, {dob1}");
+var (name2, dob2, fav2) = bob;
+Console.WriteLine($"Deconstructed: {name2}, {dob2}, {fav2}");
+
 Console.ResetColor ();
