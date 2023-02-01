@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Packt.Shared {
-    public class Person : object
+    public partial class Person : object
     {
         public const string Species = "Homo Sapien";
 

@@ -106,5 +106,6 @@ int d = 10, e = 20;
 Console.WriteLine($"Before: d={d}, e={e}, f doesn't exist yet!");
 bob.PassingParameters(d, ref e, out int f);
 Console.WriteLine($"After:  d={d}, e={e}, f={f}");
+bob.ShowPartial();
 
 Console.ResetColor ();
