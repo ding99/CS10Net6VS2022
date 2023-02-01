@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Packt.Shared {
-    public class Person : object
+    public partial class Person : object
     {
         public const string Species = "Homo Sapien";
 
@@ -86,6 +86,14 @@ namespace Packt.Shared {
                 arg0: command,
                 arg1: number,
                 arg2: active);
+        }
+
+        public void PassingParameters(int x, ref int y, out int z)
+        {
+            z = 99;
+            x++;
+            y++;
+            z++;
         }
 
         #endregion

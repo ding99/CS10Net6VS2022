@@ -97,4 +97,15 @@ Console.WriteLine(bob.OptionalParameters("Jump!", 98.5));
 Console.WriteLine(bob.OptionalParameters(number:30.7, command:"Hide!"));
 Console.WriteLine(bob.OptionalParameters("Poke!", active: false));
 
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+int a = 10, b = 20, c = 30;
+Console.WriteLine($"Before: a={a}, b={b}, c={c}");
+bob.PassingParameters(a, ref b, out c);
+Console.WriteLine($"After:  a={a}, b={b}, c={c}");
+int d = 10, e = 20;
+Console.WriteLine($"Before: d={d}, e={e}, f doesn't exist yet!");
+bob.PassingParameters(d, ref e, out int f);
+Console.WriteLine($"After:  d={d}, e={e}, f={f}");
+bob.ShowPartial();
+
 Console.ResetColor ();
