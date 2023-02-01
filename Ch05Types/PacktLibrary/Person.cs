@@ -71,7 +71,7 @@ namespace Packt.Shared {
             return $"{Name} says 'Hello!'";
         }
 
-        public string SayHelloTo(string name)
+        public string SayHello(string name)
         {
             return $"{Name} says 'Hello {name}!'";
         }
