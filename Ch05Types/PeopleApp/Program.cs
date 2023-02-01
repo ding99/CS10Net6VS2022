@@ -88,4 +88,8 @@ Console.WriteLine($"Deconstructed: {name1}, {dob1}");
 var (name2, dob2, fav2) = bob;
 Console.WriteLine($"Deconstructed: {name2}, {dob2}, {fav2}");
 
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+Console.WriteLine(bob.SayHello());
+Console.WriteLine(bob.SayHelloTo("Emily"));
+
 Console.ResetColor ();

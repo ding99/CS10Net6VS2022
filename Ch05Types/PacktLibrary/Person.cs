@@ -42,6 +42,8 @@ namespace Packt.Shared {
             fav = this.FavoriteAncientWonder;
         }
 
+        #region methods
+
         public void WriteToConsole()
         {
             Console.WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
@@ -62,5 +64,20 @@ namespace Packt.Shared {
             return (Name: "Apples", Number: 5);
         }
 
+        #region parameters
+
+        public string SayHello()
+        {
+            return $"{Name} says 'Hello!'";
+        }
+
+        public string SayHelloTo(string name)
+        {
+            return $"{Name} says 'Hello {name}!'";
+        }
+
+        #endregion
+
+        #endregion
     }
 }
