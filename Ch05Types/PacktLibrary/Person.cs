@@ -29,6 +29,19 @@ namespace Packt.Shared {
             this.Instantiated = DateTime.Now;
         }
 
+        public void Deconstruct(out string name, out DateTime dob)
+        {
+            name = this.Name;
+            dob = this.DateOfBirth;
+        }
+
+        public void Deconstruct(out string name, out DateTime dob, out WondersOfTheAncientWorld fav)
+        {
+            name = this.Name;
+            dob = this.DateOfBirth;
+            fav = this.FavoriteAncientWonder;
+        }
+
         public void WriteToConsole()
         {
             Console.WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
