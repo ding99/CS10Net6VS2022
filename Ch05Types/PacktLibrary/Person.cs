@@ -18,8 +18,66 @@ namespace Packt.Shared {
 
         public Person()
         {
-            Name = "Unknown";
-            Instantiated = DateTime.Now;
+            this.Name = "Unknown";
+            this.Instantiated = DateTime.Now;
         }
+
+        public Person(string initialName, string homePlanet)
+        {
+            this.Name = initialName;
+            this.HomePlanet = homePlanet;
+            this.Instantiated = DateTime.Now;
+        }
+
+        public void Deconstruct(out string name, out DateTime dob)
+        {
+            name = this.Name;
+            dob = this.DateOfBirth;
+        }
+
+        public void Deconstruct(out string name, out DateTime dob, out WondersOfTheAncientWorld fav)
+        {
+            name = this.Name;
+            dob = this.DateOfBirth;
+            fav = this.FavoriteAncientWonder;
+        }
+
+        #region methods
+
+        public void WriteToConsole()
+        {
+            Console.WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
+        }
+
+        public string GetOrigin()
+        {
+            return $"{this.Name} was born on {HomePlanet}.";
+        }
+
+        public (string, int) GetFruit()
+        {
+            return ("Apples", 5);
+        }
+
+        public (string Name, int Number) GetNamedFruit()
+        {
+            return (Name: "Apples", Number: 5);
+        }
+
+        #region parameters
+
+        public string SayHello()
+        {
+            return $"{Name} says 'Hello!'";
+        }
+
+        public string SayHelloTo(string name)
+        {
+            return $"{Name} says 'Hello {name}!'";
+        }
+
+        #endregion
+
+        #endregion
     }
 }

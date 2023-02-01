@@ -66,5 +66,30 @@ Console.WriteLine("{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
     blankPerson.HomePlanet,
     blankPerson.Instantiated
 );
+var gunny = new Person(initialName: "Gunny", homePlanet: "Mars");
+Console.WriteLine("{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+    gunny.Name,
+    gunny.HomePlanet,
+    gunny.Instantiated
+);
+
+Console.ForegroundColor = ConsoleColor.Green;
+bob.WriteToConsole();
+Console.WriteLine(bob.GetOrigin());
+(string, int)fruit = bob.GetFruit();
+Console.WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+var fruitNamed = bob.GetNamedFruit();
+Console.WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}");
+(var fruitName, var fruitNumber) = bob.GetFruit();
+Console.WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
+
+var (name1, dob1) = bob;
+Console.WriteLine($"Deconstructed: {name1}, {dob1}");
+var (name2, dob2, fav2) = bob;
+Console.WriteLine($"Deconstructed: {name2}, {dob2}, {fav2}");
+
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+Console.WriteLine(bob.SayHello());
+Console.WriteLine(bob.SayHelloTo("Emily"));
 
 Console.ResetColor ();
