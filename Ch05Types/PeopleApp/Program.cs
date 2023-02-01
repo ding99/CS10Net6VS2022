@@ -73,4 +73,8 @@ Console.WriteLine("{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
     gunny.Instantiated
 );
 
+Console.ForegroundColor = ConsoleColor.Green;
+bob.WriteToConsole();
+Console.WriteLine(bob.GetOrigin());
+
 Console.ResetColor ();
