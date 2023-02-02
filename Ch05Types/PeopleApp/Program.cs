@@ -118,4 +118,11 @@ Console.WriteLine(sam.Origin);
 Console.WriteLine(sam.Greeting);
 Console.WriteLine(sam.Age);
 
+sam.FavoriteIceCream = "Chocoloate Fudge";
+Console.WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
+sam.FavoritePrimaryColor = "Red";
+Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+sam.FavoritePrimaryColor = "cyan";
+Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+
 Console.ResetColor ();
