@@ -172,4 +172,12 @@ foreach(object passenger in passengers)
     Console.WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
 
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+ImmutablePerson jeff = new()
+{
+    FirstName = "Jeff",
+    LastName = "Winger"
+};
+//jeff.FirstName = "Geoff";
+
 Console.ResetColor ();
