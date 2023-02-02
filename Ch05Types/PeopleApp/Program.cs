@@ -153,9 +153,17 @@ foreach(object passenger in passengers)
 {
     decimal flightCost = passenger switch
     {
+        /* C# 8 syntax
         FirstClassPassenger p when p.AirMiles > 35000 => 1500M,
         FirstClassPassenger p when p.AirMiles > 15000 => 1750M,
-        FirstClassPassenger _ => 2000M,
+        FirstClassPassenger _ => 2000M, */
+        //C# 9 or later syntax
+        FirstClassPassenger p => p.AirMiles switch
+        {
+            > 35000 => 1500M,
+            > 15000 => 1750M,
+            _ => 2000M
+        },
         BusinessClassPassenger _ => 1000M,
         CoachClassPassenger p when p.CarryOnKG < 10.0 => 500M,
         CoachClassPassenger _ => 650M,
@@ -163,5 +171,25 @@ foreach(object passenger in passengers)
     };
     Console.WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
+
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+ImmutablePerson jeff = new()
+{
+    FirstName = "Jeff",
+    LastName = "Winger"
+};
+//jeff.FirstName = "Geoff"; // syntax error
+ImmutableVehicle car = new()
+{
+    Brand = "Mazda MX-5 RF",
+    Color = "Soul Red Crystal Metallic",
+    Wheels = 4
+};
+ImmutableVehicle repaintedCar = car with { Color = "Polymetal Grey Metallic" };
+Console.WriteLine($"Original car color was {car.Color}.");
+Console.WriteLine($"New car color is {repaintedCar.Color}.");
+ImmutableAnimal oscar = new("Oscar", "Labrador");
+var (who, what) = oscar;
+Console.WriteLine($"{who} is a {what}.");
 
 Console.ResetColor ();
