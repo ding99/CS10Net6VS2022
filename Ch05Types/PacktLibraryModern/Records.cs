@@ -13,3 +13,5 @@ public record ImmutableVehicle
     public string? Color { get; init; }
     public string? Brand { get; init; }
 }
+
+public record ImmutableAnimal (string Name, string Species);

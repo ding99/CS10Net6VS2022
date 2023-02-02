@@ -188,5 +188,8 @@ ImmutableVehicle car = new()
 ImmutableVehicle repaintedCar = car with { Color = "Polymetal Grey Metallic" };
 Console.WriteLine($"Original car color was {car.Color}.");
 Console.WriteLine($"New car color is {repaintedCar.Color}.");
+ImmutableAnimal oscar = new("Oscar", "Labrador");
+var (who, what) = oscar;
+Console.WriteLine($"{who} is a {what}.");
 
 Console.ResetColor ();
