@@ -108,4 +108,60 @@ bob.PassingParameters(d, ref e, out int f);
 Console.WriteLine($"After:  d={d}, e={e}, f={f}");
 bob.ShowPartial();
 
+Console.ForegroundColor = ConsoleColor.Yellow;
+Person sam = new()
+{
+    Name = "Sam",
+    DateOfBirth = new(1972, 1, 27)
+};
+Console.WriteLine(sam.Origin);
+Console.WriteLine(sam.Greeting);
+Console.WriteLine(sam.Age);
+
+sam.FavoriteIceCream = "Chocoloate Fudge";
+Console.WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
+sam.FavoritePrimaryColor = "Red";
+Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+try
+{
+    sam.FavoritePrimaryColor = "cyan";
+    Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+sam.Children.Add(new() { Name = "Charlie" });
+sam.Children.Add(new() { Name = "Ella" });
+Console.WriteLine($"Sam's first child is {sam.Children[0].Name}");
+Console.WriteLine($"Sam's second child is {sam.Children[1].Name}");
+Console.WriteLine($"Sam's first child is {sam[0].Name}");
+Console.WriteLine($"Sam's second child is {sam[1].Name}");
+
+Console.ForegroundColor = ConsoleColor.Green;
+object[] passengers =
+{
+    new FirstClassPassenger { AirMiles = 1_419},
+    new FirstClassPassenger { AirMiles = 16_562},
+    new BusinessClassPassenger(),
+    new CoachClassPassenger{ CarryOnKG = 25.7 },
+    new CoachClassPassenger{ CarryOnKG = 0 },
+};
+foreach(object passenger in passengers)
+{
+    decimal flightCost = passenger switch
+    {
+        FirstClassPassenger p when p.AirMiles > 35000 => 1500M,
+        FirstClassPassenger p when p.AirMiles > 15000 => 1750M,
+        FirstClassPassenger _ => 2000M,
+        BusinessClassPassenger _ => 1000M,
+        CoachClassPassenger p when p.CarryOnKG < 10.0 => 500M,
+        CoachClassPassenger _ => 650M,
+        _ => 800M
+    };
+    Console.WriteLine($"Flight costs {flightCost:C} for {passenger}");
+}
+
 Console.ResetColor ();
