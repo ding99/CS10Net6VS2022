@@ -178,6 +178,15 @@ ImmutablePerson jeff = new()
     FirstName = "Jeff",
     LastName = "Winger"
 };
-//jeff.FirstName = "Geoff";
+//jeff.FirstName = "Geoff"; // syntax error
+ImmutableVehicle car = new()
+{
+    Brand = "Mazda MX-5 RF",
+    Color = "Soul Red Crystal Metallic",
+    Wheels = 4
+};
+ImmutableVehicle repaintedCar = car with { Color = "Polymetal Grey Metallic" };
+Console.WriteLine($"Original car color was {car.Color}.");
+Console.WriteLine($"New car color is {repaintedCar.Color}.");
 
 Console.ResetColor ();
