@@ -108,4 +108,21 @@ bob.PassingParameters(d, ref e, out int f);
 Console.WriteLine($"After:  d={d}, e={e}, f={f}");
 bob.ShowPartial();
 
+Console.ForegroundColor = ConsoleColor.Yellow;
+Person sam = new()
+{
+    Name = "Sam",
+    DateOfBirth = new(1972, 1, 27)
+};
+Console.WriteLine(sam.Origin);
+Console.WriteLine(sam.Greeting);
+Console.WriteLine(sam.Age);
+
+sam.FavoriteIceCream = "Chocoloate Fudge";
+Console.WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
+sam.FavoritePrimaryColor = "Red";
+Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+sam.FavoritePrimaryColor = "cyan";
+Console.WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+
 Console.ResetColor ();
