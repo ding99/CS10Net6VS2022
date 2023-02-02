@@ -161,7 +161,7 @@ foreach(object passenger in passengers)
         CoachClassPassenger _ => 650M,
         _ => 800M
     };
-    Console.WriteLine($"Flight coast {flightCost:C} for {passenger}");
+    Console.WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
 
 Console.ResetColor ();
