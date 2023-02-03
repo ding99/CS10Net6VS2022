@@ -4,14 +4,15 @@ namespace Packt.Shared;
 
 public class Person : object
 {
+    #region variables
+
     public string? Name;
     public DateTime DateOfBirth;
     public List<Person> Children = new();
 
-    public void WriteToConsole()
-    {
-        WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
-    }
+    #endregion variables
+
+    #region static methods
 
     public static Person Procreate(Person p1, Person p2)
     {
@@ -24,8 +25,25 @@ public class Person : object
         return baby;
     }
 
+    public static Person operator *(Person p1, Person p2)
+    {
+        return Person.Procreate(p1, p2);
+    }
+
+    #endregion static methods
+
+    #region instance methods
+
+    public void WriteToConsole()
+    {
+        WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
+    }
+
     public Person ProcreateWith(Person partner)
     {
         return Procreate(this, partner);
     }
+
+    #endregion methods
+
 }

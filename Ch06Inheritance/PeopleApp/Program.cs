@@ -6,11 +6,13 @@ ForegroundColor = ConsoleColor.Yellow;
 Person harry = new() { Name = "Harry" };
 Person mary = new() { Name = "Mary" };
 Person jill = new() { Name = "Jill" };
-
+// call instance method
 Person baby1 = mary.ProcreateWith(harry);
 baby1.Name = "Gary";
-
+// call static mehtod
 Person baby2 = Person.Procreate(harry, jill);
+// call an operator
+Person baby3 = harry * mary;
 
 WriteLine($"{harry.Name} has {harry.Children.Count} children.");
 WriteLine($"{mary.Name} has {mary.Children.Count} children.");
