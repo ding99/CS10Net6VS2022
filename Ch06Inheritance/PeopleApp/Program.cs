@@ -30,6 +30,17 @@ harry.Poke();
 harry.Poke();
 harry.Poke();
 
+ForegroundColor = ConsoleColor.DarkYellow;
+System.Collections.Hashtable lookupObject = new();
+lookupObject.Add(key: 1, value: "Alpha");
+lookupObject.Add(key: 2, value: "Beta");
+lookupObject.Add(key: 3, value: "Gamma");
+lookupObject.Add(key: 4, value: "Delta");
+int key = 2;
+WriteLine(format: "Key {0} has value: {1}", arg0: key, arg1: lookupObject[key]);
+WriteLine(format: "Key {0} has value: {1}", arg0: harry, arg1: lookupObject[harry]);
+
+
 ResetColor();
 
 static void Harry_Shout(object? sender, EventArgs e)
