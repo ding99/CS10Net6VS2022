@@ -63,7 +63,7 @@ public class Person : object
 
     #region delegate
 
-    public EventHandler? Shout;
+    public event EventHandler? Shout;
     public int AngerLevel;
 
     public void Poke()

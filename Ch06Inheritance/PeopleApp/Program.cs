@@ -24,7 +24,7 @@ WriteLine(format:"{0}'s first child is named \"{1}\".",
 WriteLine($"5! is {Person.Factorial(5)}");
 
 ForegroundColor = ConsoleColor.Cyan;
-harry.Shout = Harry_Shout;
+harry.Shout += Harry_Shout;
 harry.Poke();
 harry.Poke();
 harry.Poke();
