@@ -61,4 +61,19 @@ public class Person : object
 
     #endregion methods
 
+    #region delegate
+
+    public event EventHandler? Shout;
+    public int AngerLevel;
+
+    public void Poke()
+    {
+        this.AngerLevel++;
+        if(this.AngerLevel >= 3) {
+            Shout?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    #endregion delegate
+
 }
