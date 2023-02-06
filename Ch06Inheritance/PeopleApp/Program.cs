@@ -48,6 +48,28 @@ lookupIntString.Add(key: 4, value: "Delta");
 key = 3;
 WriteLine(format: "Key {0} has value: {1}", arg0:key, arg1: lookupIntString[key]);
 
+ForegroundColor = ConsoleColor.Green;
+Person[] people =
+{
+    new() { Name = "Simon" },
+    new() { Name = "Jenny" },
+    new() { Name = "Adam" },
+    new() { Name = "Richard" }
+};
+Write("Initial list of people:");
+foreach(Person p in people)
+{
+    Write($" {p.Name}");
+}
+WriteLine();
+Write("Use Person's IComparable implementation to sort:");
+Array.Sort(people);
+foreach(Person p in people)
+{
+    Write($" {p.Name}");
+}
+WriteLine();
+
 ResetColor();
 
 static void Harry_Shout(object? sender, EventArgs e)
