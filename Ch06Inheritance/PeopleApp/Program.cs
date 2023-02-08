@@ -102,7 +102,17 @@ aliceInPerson.WriteToConsole();
 WriteLine(aliceInEmployee.ToString());
 WriteLine(aliceInPerson.ToString());
 
-Employee explicitAlice = (Employee)aliceInPerson;
+//or if(alicePerson is not Employee)
+if(aliceInPerson is Employee explicitAlice)
+{
+    WriteLine($"{nameof(aliceInPerson)} IS an Employee");
+}
+
+Employee? aliceAsEmployee = aliceInPerson as Employee;
+if(aliceAsEmployee != null)
+{
+    WriteLine($"{nameof(aliceInPerson)} AS an Employee");
+}
 
 ResetColor();
 
