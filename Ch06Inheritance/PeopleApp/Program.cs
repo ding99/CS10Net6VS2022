@@ -102,6 +102,8 @@ aliceInPerson.WriteToConsole();
 WriteLine(aliceInEmployee.ToString());
 WriteLine(aliceInPerson.ToString());
 
+Employee explicitAlice = (Employee)aliceInPerson;
+
 ResetColor();
 
 static void Harry_Shout(object? sender, EventArgs e)
