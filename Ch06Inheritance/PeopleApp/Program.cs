@@ -83,6 +83,18 @@ DisplacementVector dv2 = new(-2, 7);
 DisplacementVector dv3 = dv1 + dv2;
 WriteLine($"({dv1.X},{dv1.Y}) + ({dv2.X},{dv2.Y}) = ({dv3.X},{dv3.Y})");
 
+ForegroundColor = ConsoleColor.Yellow;
+Employee john = new()
+{
+    Name = "John Jones",
+    DateOfBirth = new(year: 1990, month: 7, day: 28)
+};
+john.EmployeeCode = "JJ001";
+john.HireDate = new(year: 2014, month: 11, day: 23);
+john.WriteToConsole();
+WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
+WriteLine(john.ToString());
+
 ResetColor();
 
 static void Harry_Shout(object? sender, EventArgs e)

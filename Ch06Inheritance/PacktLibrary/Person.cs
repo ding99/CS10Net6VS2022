@@ -85,4 +85,11 @@ public class Person : object, IComparable<Person>
     }
 
     #endregion
+
+    #region override
+    public override string ToString()
+    {
+        return $"{Name} is a {base.ToString()}";
+    }
+    #endregion
 }
