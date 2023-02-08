@@ -65,9 +65,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacktLibraryModern", "Ch05T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch06Inheritance", "Ch06Inheritance", "{37B62836-E621-454A-8799-1C334858BF3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibrary", "Ch06Inheritance\PacktLibrary\PacktLibrary.csproj", "{982DCCA4-5C98-4544-9430-FB6ECE9C627D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacktLibrary", "Ch06Inheritance\PacktLibrary\PacktLibrary.csproj", "{982DCCA4-5C98-4544-9430-FB6ECE9C627D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "Ch06Inheritance\PeopleApp\PeopleApp.csproj", "{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleApp", "Ch06Inheritance\PeopleApp\PeopleApp.csproj", "{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullHandling", "Ch06Inheritance\NullHandling\NullHandling.csproj", "{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +185,10 @@ Global
 		{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -215,6 +221,7 @@ Global
 		{FB6E40D9-03D5-457E-BFE8-2A5611F8CEA2} = {9C428C0C-A322-44E7-A0F3-4B9392820F12}
 		{982DCCA4-5C98-4544-9430-FB6ECE9C627D} = {37B62836-E621-454A-8799-1C334858BF3B}
 		{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A} = {37B62836-E621-454A-8799-1C334858BF3B}
+		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04} = {37B62836-E621-454A-8799-1C334858BF3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
