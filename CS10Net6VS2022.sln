@@ -75,6 +75,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzing", "Ch06Inheri
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch07Packaging", "Ch07Packaging", "{D5014E9B-F57D-4FAF-9AC9-7F33D2D4FE0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesAndNamespaces", "Ch07Packaging\AssembliesAndNamespaces\AssembliesAndNamespaces.csproj", "{71130AE5-67D6-4E65-85B1-F516203D4E46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,10 @@ Global
 		{3D3FA950-3454-4CEB-B108-F286DC2ABD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3FA950-3454-4CEB-B108-F286DC2ABD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3FA950-3454-4CEB-B108-F286DC2ABD44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71130AE5-67D6-4E65-85B1-F516203D4E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71130AE5-67D6-4E65-85B1-F516203D4E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71130AE5-67D6-4E65-85B1-F516203D4E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71130AE5-67D6-4E65-85B1-F516203D4E46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -231,6 +237,7 @@ Global
 		{28E30A47-FFE3-4466-B9DC-3BD8B2F39A4A} = {37B62836-E621-454A-8799-1C334858BF3B}
 		{96D4E96B-490A-4E6E-A6C3-07164AC1EA04} = {37B62836-E621-454A-8799-1C334858BF3B}
 		{3D3FA950-3454-4CEB-B108-F286DC2ABD44} = {37B62836-E621-454A-8799-1C334858BF3B}
+		{71130AE5-67D6-4E65-85B1-F516203D4E46} = {D5014E9B-F57D-4FAF-9AC9-7F33D2D4FE0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
