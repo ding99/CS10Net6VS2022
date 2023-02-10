@@ -71,7 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleApp", "Ch06Inheritanc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullHandling", "Ch06Inheritance\NullHandling\NullHandling.csproj", "{96D4E96B-490A-4E6E-A6C3-07164AC1EA04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalyzing", "Ch06Inheritance\CodeAnalyzing\CodeAnalyzing.csproj", "{3D3FA950-3454-4CEB-B108-F286DC2ABD44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzing", "Ch06Inheritance\CodeAnalyzing\CodeAnalyzing.csproj", "{3D3FA950-3454-4CEB-B108-F286DC2ABD44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch07Packaging", "Ch07Packaging", "{D5014E9B-F57D-4FAF-9AC9-7F33D2D4FE0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
