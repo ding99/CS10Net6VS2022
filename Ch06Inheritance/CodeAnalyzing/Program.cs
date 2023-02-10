@@ -1,4 +1,5 @@
-﻿using System;
+﻿#pragma warning disable SA1200 // UsingDirectivesMustBePlacedWithinNamespace
+using System;
 
 namespace CodeAnalyzing
 {
