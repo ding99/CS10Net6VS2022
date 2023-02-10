@@ -1,4 +1,8 @@
-﻿namespace CodeAnalyzing;
+﻿// <copyright file="Program.cs" company="Packt">
+// Copyright(c) Packt. All rights reserved.
+// </copyright>
+
+namespace CodeAnalyzing;
 
 using System;
 
