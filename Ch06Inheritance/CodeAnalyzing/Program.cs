@@ -1,13 +1,18 @@
-﻿#pragma warning disable SA1200 // UsingDirectivesMustBePlacedWithinNamespace
+﻿namespace CodeAnalyzing;
+
 using System;
 
-namespace CodeAnalyzing
+/// <summary>
+/// The main class for this console app.
+/// </summary>
+public class Program
 {
-    internal class Program
+    /// <summary>
+    /// The main entry point for this console app.
+    /// </summary>
+    /// <param name="args">A string arry of arguments passed to the console app.</param>
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        Console.WriteLine("Hello World!");
     }
 }
