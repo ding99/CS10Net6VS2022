@@ -14,4 +14,19 @@ foreach(string item in citiesArray)
     WriteLine(item);
 }
 
+ForegroundColor = ConsoleColor.Cyan;
+
+string fullname = "Alan Jones";
+int indexOfTheSpace = fullname.IndexOf(' ');
+string firstName = fullname.Substring(startIndex:0, length:indexOfTheSpace);
+string lastName = fullname.Substring(startIndex: indexOfTheSpace + 1);
+WriteLine($"Original: {fullname}");
+WriteLine($"Swapped: {lastName}, {firstName}");
+
+string company = "Microsoft";
+bool startWithM = company.StartsWith("M");
+bool containN = company.Contains("N");
+WriteLine($"Text: {company}");
+WriteLine($"Starts with M: {startWithM}, contains an N: {containN}");
+
 ResetColor();
