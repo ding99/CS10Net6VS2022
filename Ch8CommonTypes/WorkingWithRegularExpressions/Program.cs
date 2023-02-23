@@ -6,7 +6,7 @@ ForegroundColor = ConsoleColor.Yellow;
 
 WriteLine("Enter your age:");
 string? input = ReadLine();
-Regex ageChecker = new(@"\d");
+Regex ageChecker = new(@"^\d+$");
 if(ageChecker.IsMatch(input))
 {
     WriteLine("Thank you!");
