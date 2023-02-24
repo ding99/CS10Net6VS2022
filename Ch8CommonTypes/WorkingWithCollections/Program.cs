@@ -1,19 +1,25 @@
 ﻿using static System.Console;
 
 ForegroundColor = ConsoleColor.Yellow; WorkingWithLists();
-
 ForegroundColor = ConsoleColor.Cyan; WorkingWithDictionaries();
+ForegroundColor = ConsoleColor.Green; WorkingWithQueues();
+ForegroundColor = ConsoleColor.DarkYellow; WorkingWithPriorityQueues();
 
 ResetColor();
 
 static void Output(string title, IEnumerable<string> collection)
 {
     Write($"{title}:");
-    string.Join(' ', collection);
     foreach(var item in collection)
-    {
         Write($" [{item}]");
-    }
+    WriteLine();
+}
+
+static void OutputPQ<TElement, TPriority>(string title, IEnumerable<(TElement Element, TPriority Priority)> collection)
+{
+    Write($"{title}:");
+    foreach((TElement, TPriority) item in collection)
+        Write($" [{item.Item1}:{item.Item2}]");
     WriteLine();
 }
 
@@ -50,5 +56,42 @@ static void WorkingWithDictionaries()
     WriteLine();
     string key = "long";
     WriteLine($"The definition of {key} is {keywords[key]}");
+}
+
+static void WorkingWithQueues()
+{
+    Queue<string> coffee = new();
+    coffee.Enqueue("Damir");
+    coffee.Enqueue("Andrea");
+    coffee.Enqueue("Ronald");
+    coffee.Enqueue("Amin");
+    coffee.Enqueue("Irina");
+    Output("Initial queue from front to back", coffee);
+
+    string served = coffee.Dequeue();
+    WriteLine($"Served: [{served}]");
+    served = coffee.Dequeue();
+    WriteLine($"Served: [{served}]");
+    Output("Current queue from front to back", coffee);
+    WriteLine($"{coffee.Peek()} is next in line.");
+    Output("Current queue from front to back", coffee);
+}
+
+static void WorkingWithPriorityQueues()
+{
+    PriorityQueue<string, int> vaccine = new();
+    vaccine.Enqueue("Pamela", 1);
+    vaccine.Enqueue("Rebecca", 3);
+    vaccine.Enqueue("Juliet", 2);
+    vaccine.Enqueue("Ian", 1);
+
+    OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
+    WriteLine($"[{vaccine.Dequeue()}] has been vaccinated.");
+    WriteLine($"[{vaccine.Dequeue()}] has been vaccinated.");
+    OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
+    WriteLine($"[{vaccine.Dequeue()}] has been vaccinated.");
+    vaccine.Enqueue("Mark", 2);
+    WriteLine($"[{vaccine.Peek()}] will be next to be vaccinated.");
+    OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
 }
 
