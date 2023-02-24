@@ -1,7 +1,9 @@
 ﻿using static System.Console;
 
-ForegroundColor = ConsoleColor.Yellow;
-WorkingWithLists();
+ForegroundColor = ConsoleColor.Yellow; WorkingWithLists();
+
+ForegroundColor = ConsoleColor.Cyan; WorkingWithDictionaries();
+
 ResetColor();
 
 static void Output(string title, IEnumerable<string> collection)
@@ -10,7 +12,7 @@ static void Output(string title, IEnumerable<string> collection)
     string.Join(' ', collection);
     foreach(var item in collection)
     {
-        Write($" {item}");
+        Write($" [{item}]");
     }
     WriteLine();
 }
@@ -30,5 +32,23 @@ static void WorkingWithLists()
     cities.RemoveAt(1);
     cities.Remove("Milan");
     Output("After removing two cities", cities);
+}
+
+static void WorkingWithDictionaries()
+{
+    Dictionary<string, string> keywords = new()
+    {
+        {"int", "32-bit integer data type" },
+        {"long", "64-bit integer data type" },
+        {"float", "Single precision floating point number" },
+    };
+
+    Output("Dictionary keys:", keywords.Keys);
+    Output("Dictionary values:", keywords.Values);
+    foreach(var item in keywords)
+        Write($" [{item.Key}:{item.Value}]");
+    WriteLine();
+    string key = "long";
+    WriteLine($"The definition of {key} is {keywords[key]}");
 }
 
