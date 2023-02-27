@@ -1,4 +1,6 @@
-﻿using static System.Console;
+﻿using System.Collections.Immutable;
+using System.Net.Sockets;
+using static System.Console;
 
 ForegroundColor = ConsoleColor.Yellow; WorkingWithLists();
 ForegroundColor = ConsoleColor.Cyan; WorkingWithDictionaries();
@@ -38,6 +40,11 @@ static void WorkingWithLists()
     cities.RemoveAt(1);
     cities.Remove("Milan");
     Output("After removing two cities", cities);
+
+    ImmutableList<string> immutableCities = cities.ToImmutableList();
+    ImmutableList<string> newList = immutableCities.Add("Rio");
+    Output("Immutable list of cities", immutableCities);
+    Output("New list of cities", newList);
 }
 
 static void WorkingWithDictionaries()
