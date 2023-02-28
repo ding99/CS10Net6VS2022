@@ -7,14 +7,13 @@ ForegroundColor = ConsoleColor.Yellow;
 
 WriteLine($"current directory [{Environment.CurrentDirectory}]");
 
-//string imageFolder = Path.Combine(Environment.CurrentDirectory, "images");
-string imageFolder = @"..\..\..\images";
+string sourceFolder = @"..\..\..\source";
 string targetFolder = @"..\..\..\target";
-IEnumerable<string> images = Directory.EnumerateFiles(imageFolder);
+
+IEnumerable<string> images = Directory.EnumerateFiles(sourceFolder);
 foreach(string imagePath in images)
 {
     string thumbnailPath = Path.Combine(targetFolder, Path.GetFileNameWithoutExtension(imagePath) + "-thumbnail" + Path.GetExtension(imagePath));
-    //string thumbnailPath = Path.Combine("images", Path.GetFileNameWithoutExtension(imagePath) + "-thumbnail" + Path.GetExtension(imagePath));
 
     using Image image = Image.Load(imagePath);
     image.Mutate(x => x.Resize(image.Width / 10, image.Height / 10));
