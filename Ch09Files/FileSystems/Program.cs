@@ -3,9 +3,8 @@ using static System.IO.Directory;
 using static System.IO.Path;
 using static System.Environment;
 
-ForegroundColor = ConsoleColor.Yellow;
-
-OutputFileSystemInfo ();
+ForegroundColor = ConsoleColor.Yellow; OutputFileSystemInfo ();
+ForegroundColor = ConsoleColor.Cyan; Drives ();
 
 ResetColor ();
 
@@ -24,4 +23,23 @@ static void OutputFileSystemInfo ()
     WriteLine ("{0,-33} {1}", arg0: ".ApplicationData", arg1: GetFolderPath (SpecialFolder.ApplicationData));
     WriteLine ("{0,-33} {1}", arg0: ".MyDocuments", arg1: GetFolderPath (SpecialFolder.MyDocuments));
     WriteLine ("{0,-33} {1}", arg0: ".Personal", arg1: GetFolderPath (SpecialFolder.Personal));
+}
+
+
+static void Drives ()
+{
+    WriteLine ("{0,-30} | {1,-10} | {2,-7} | {3, 18} | {4,18}",
+        "NAME", "TYPE", "FORMAT", "SIZE(BYTES)", "FREE SPACE");
+
+    foreach(DriveInfo drive in DriveInfo.GetDrives())
+    {
+        if(drive.IsReady)
+        {
+            WriteLine ("{0,-30} | {1,-10} | {2,-7} | {3, 18:N0} | {4,18:N0}",
+                drive.Name, drive.DriveType, drive.DriveFormat, drive.TotalSize, drive.AvailableFreeSpace);
+        } else
+        {
+            WriteLine ("{0,-30} | {1,-10}", drive.Name, drive.DriveType);
+        }
+    }
 }
