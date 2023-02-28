@@ -19,7 +19,7 @@ static void OutputFileSystemInfo ()
     WriteLine("{0,-33} {1}", arg0: "Environment.SystemDirectory)", arg1: SystemDirectory);
     WriteLine("{0,-33} {1}", arg0: "Path.GetTempPath()", arg1: GetTempPath());
 
-    WriteLine("GetFolderPath(SpecialFolder");
+    WriteLine("-- GetFolderPath(SpecialFolder");
     WriteLine ("{0,-33} {1}", arg0: ".System", arg1: GetFolderPath(SpecialFolder.System));
     WriteLine ("{0,-33} {1}", arg0: ".ApplicationData", arg1: GetFolderPath (SpecialFolder.ApplicationData));
     WriteLine ("{0,-33} {1}", arg0: ".MyDocuments", arg1: GetFolderPath (SpecialFolder.MyDocuments));
