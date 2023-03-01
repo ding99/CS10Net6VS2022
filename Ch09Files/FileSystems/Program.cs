@@ -27,7 +27,6 @@ static void OutputFileSystemInfo ()
     WriteLine ("{0,-33} {1}", arg0: ".Personal", arg1: GetFolderPath (SpecialFolder.Personal));
 }
 
-
 static void Drives ()
 {
     WriteLine ("{0,-30} | {1,-10} | {2,-7} | {3, 18} | {4,18}",
