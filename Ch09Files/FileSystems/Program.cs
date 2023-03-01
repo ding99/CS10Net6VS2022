@@ -90,4 +90,10 @@ static void WorkWithFiles ()
     WriteLine ($"File Extension: {GetExtension (textFile)}");
     WriteLine ($"Random File Name: {GetRandomFileName ()}");
     WriteLine ($"Temporary File Name: {GetTempFileName()}");
+
+    FileInfo info = new FileInfo (backupFile);
+    WriteLine ($"{backupFile}:");
+    WriteLine ($"Contains {info.Length} bytes");
+    WriteLine ($"Last accessed {info.LastAccessTime}");
+    WriteLine ($"Has readonly set to {info.IsReadOnly}");
 }
