@@ -5,6 +5,7 @@ using static System.Environment;
 
 ForegroundColor = ConsoleColor.Yellow; OutputFileSystemInfo ();
 ForegroundColor = ConsoleColor.Cyan; Drives ();
+ForegroundColor = ConsoleColor.DarkYellow; WorkWithDirectories ();
 
 ResetColor ();
 
@@ -42,4 +43,19 @@ static void Drives ()
             WriteLine ("{0,-30} | {1,-10}", drive.Name, drive.DriveType);
         }
     }
+}
+
+static void WorkWithDirectories ()
+{
+    string newFolder = Combine (GetFolderPath (SpecialFolder.Personal), "Code", "Chapter09", "newFolder");
+    WriteLine ($"Working with: {newFolder}");
+    WriteLine ($"Does it exist? {Exists (newFolder)}");
+    WriteLine ("Creating it...");
+    CreateDirectory (newFolder);
+    WriteLine($"Does it exist? {Exists(newFolder)}");
+    WriteLine ("Confirm the directory exists, and then press ENTER:");
+    ReadLine ();
+    WriteLine ("Deleting it...");
+    Delete(newFolder, recursive: true);
+    WriteLine ($"Does it exist? {Exists (newFolder)}");
 }
