@@ -6,6 +6,7 @@ using static System.Environment;
 ForegroundColor = ConsoleColor.Yellow; OutputFileSystemInfo ();
 ForegroundColor = ConsoleColor.Cyan; Drives ();
 ForegroundColor = ConsoleColor.DarkYellow; WorkWithDirectories ();
+ForegroundColor = ConsoleColor.Green; WorkWithFiles ();
 
 ResetColor ();
 
@@ -58,4 +59,28 @@ static void WorkWithDirectories ()
     WriteLine ("Deleting it...");
     Delete(newFolder, recursive: true);
     WriteLine ($"Does it exist? {Exists (newFolder)}");
+}
+
+static void WorkWithFiles ()
+{
+    string dir = Combine (GetFolderPath (SpecialFolder.Personal), "Code", "Chapter09", "OutputFiles");
+    CreateDirectory(dir);
+    string textFile = Combine (dir, "Dummy.txt");
+    string backupFile = Combine (dir, "Dummy.bak");
+    WriteLine ($"Working with: {textFile}");
+    WriteLine ($"Does it exist? {File.Exists (textFile)}");
+    StreamWriter textWriter = File.CreateText (textFile);
+    textWriter.WriteLine ("Hello, C#!");
+    textWriter.Close ();
+    WriteLine ($"Does it exist? {File.Exists (textFile)}");
+    File.Copy(sourceFileName:textFile, destFileName:backupFile);
+    WriteLine ($"Does {backupFile} exist? {File.Exists (backupFile)}");
+    Write ("Confirm the files exist, and then press ENTER:");
+    ReadLine ();
+    File.Delete (textFile);
+    WriteLine ($"Does it exist? {File.Exists (textFile)}");
+    WriteLine ($"Reading contents of {backupFile}:");
+    StreamReader textReader = File.OpenText (backupFile);
+    WriteLine(textReader.ReadToEnd ());
+    textReader.Close ();
 }
