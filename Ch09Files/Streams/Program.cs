@@ -9,6 +9,7 @@ ForegroundColor = ConsoleColor.Yellow; WorkWithText ();
 ForegroundColor = ConsoleColor.Cyan; WorkWithXml ();
 ForegroundColor = ConsoleColor.DarkYellow; WorkWithXmlUsing ();
 ForegroundColor = ConsoleColor.Green; WorkWithCompression ();
+ForegroundColor = ConsoleColor.Yellow; WorkWithCompression (false);
 
 ResetColor ();
 
@@ -89,43 +90,56 @@ static void WorkWithXmlUsing ()
     }
 }
 
-static void WorkWithCompression ()
+static void WorkWithCompression (bool useBrotli = true)
 {
-    string fileExt = "gzip";
+    string fileExt = useBrotli ? "brotli" : "gzip";
     string filePath = Combine (CurrentDirectory, $"stream.{fileExt}");
-    
-    FileStream file = File.Create (filePath);
-    using Stream compressor = new GZipStream (file, CompressionMode.Compress);
-    using XmlWriter xml = XmlWriter.Create (compressor);
-    xml.WriteStartDocument ();
-    xml.WriteStartElement ("callsigns");
-    foreach (string item in Viper.Callsigns)
-        xml.WriteElementString ("callsign", item);
-    xml.WriteEndElement ();
-    xml.Close ();
-    compressor.Close ();
-    file.Close ();
 
+    FileStream file = File.Create (filePath);
+
+    Stream compressor;
+    if (useBrotli)
+        compressor = new BrotliStream (file, CompressionMode.Compress);
+    else
+        compressor = new GZipStream (file, CompressionMode.Compress);
+
+    using (compressor)
+    {
+        using XmlWriter xml = XmlWriter.Create (compressor);
+        xml.WriteStartDocument ();
+        xml.WriteStartElement ("callsigns");
+        foreach (string item in Viper.Callsigns)
+            xml.WriteElementString ("callsign", item);
+        xml.WriteEndElement ();
+        xml.Close ();
+        compressor.Close ();
+        file.Close ();
+    }
     WriteLine ("{0} contains {1:N0} bytes.", filePath, new FileInfo (filePath).Length);
     WriteLine ($"The compressed contents:");
     WriteLine (File.ReadAllText (filePath));
 
     WriteLine ("-- Reading the compressed XML file:");
     file = File.Open (filePath, FileMode.Open);
+    Stream decompressor;
+    if (useBrotli)
+        decompressor = new BrotliStream (file, CompressionMode.Decompress);
+    else
+        decompressor = new GZipStream (file, CompressionMode.Decompress);
 
-    using Stream decompressor = new GZipStream (file, CompressionMode.Decompress);
-    using XmlReader reader = XmlReader.Create (decompressor);
-    while (reader.Read ())
+    using (decompressor)
     {
-        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "callsign"))
+        using XmlReader reader = XmlReader.Create (decompressor);
+        while (reader.Read ())
         {
-            reader.Read ();
-            WriteLine ($"{reader.Value}");
+            if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "callsign"))
+            {
+                reader.Read ();
+                WriteLine ($"{reader.Value}");
+            }
         }
     }
-
 }
-
 
 static class Viper
 {
