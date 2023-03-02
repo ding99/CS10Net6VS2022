@@ -6,6 +6,7 @@ using static System.IO.Path;
 
 ForegroundColor = ConsoleColor.Yellow; WorkWithText ();
 ForegroundColor = ConsoleColor.Cyan; WorkWithXml ();
+ForegroundColor = ConsoleColor.DarkYellow; WorkWithXmlUsing ();
 
 ResetColor ();
 
@@ -23,18 +24,64 @@ static void WorkWithText ()
 
 static void WorkWithXml ()
 {
+    FileStream? xmlFileStream = null;
+    XmlWriter? xml = null;
+
+    try
+    {
+        string xmlFile = Combine (CurrentDirectory, "streamsUsing.xml");
+        xmlFileStream = File.Create (xmlFile);
+        xml = XmlWriter.Create (xmlFileStream, new XmlWriterSettings { Indent = true });
+        xml.WriteStartDocument ();
+        xml.WriteStartElement ("callsigns");
+        foreach (string item in Viper.Callsigns)
+            xml.WriteElementString ("callsign", item);
+        xml.WriteEndElement ();
+        xml.Close ();
+        xmlFileStream.Close ();
+        WriteLine ("{0} contains {1:N0} bytes.", arg0: xmlFile, arg1: new FileInfo (xmlFile).Length);
+        WriteLine (File.ReadAllText (xmlFile));
+    }
+    catch (Exception ex)
+    {
+        WriteLine ($"{ex.GetType ()} says {ex.Message}");
+    }
+    finally
+    {
+        if(xml != null)
+        {
+            xml.Dispose ();
+            WriteLine ("The XML writer's unmanaged resources have been disposed.");
+            if(xmlFileStream != null)
+            {
+                xmlFileStream.Dispose ();
+                WriteLine ("The file stream's unmanaged resources have been disposed.");
+            }
+        }
+    }
+}
+
+static void WorkWithXmlUsing ()
+{
     string xmlFile = Combine (CurrentDirectory, "streams.xml");
-    FileStream xmlFileStream = File.Create (xmlFile);
-    XmlWriter xml = XmlWriter.Create (xmlFileStream, new XmlWriterSettings {  Indent = true });
-    xml.WriteStartDocument ();
-    xml.WriteStartElement ("callsigns");
-    foreach (string item in Viper.Callsigns)
-        xml.WriteElementString ("callsign", item);
-    xml.WriteEndElement ();
-    xml.Close ();
-    xmlFileStream.Close ();
-    WriteLine("{0} contains {1:N0} bytes.", arg0:xmlFile, arg1:new FileInfo(xmlFile).Length);
-    WriteLine(File.ReadAllText (xmlFile));
+    using FileStream xmlFileStream = File.Create (xmlFile);
+    using XmlWriter xml = XmlWriter.Create (xmlFileStream, new XmlWriterSettings { Indent = true });
+    try
+    {
+        xml.WriteStartDocument ();
+        xml.WriteStartElement ("callsigns");
+        foreach (string item in Viper.Callsigns)
+            xml.WriteElementString ("callsign", item);
+        xml.WriteEndElement ();
+        xml.Close ();
+        xmlFileStream.Close ();
+        WriteLine ("{0} contains {1:N0} bytes.", arg0: xmlFile, arg1: new FileInfo (xmlFile).Length);
+        WriteLine (File.ReadAllText (xmlFile));
+    }
+    catch (Exception ex)
+    {
+        WriteLine ($"{ex.GetType ()} says {ex.Message}");
+    }
 }
 
 static class Viper
