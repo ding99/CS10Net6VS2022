@@ -39,23 +39,35 @@ List<Person> people = new ()
 };
 
 XmlSerializer xs = new(people.GetType());
-string path = Combine (CurrentDirectory, "people.xml");
-using FileStream stream = File.Create (path);
-xs.Serialize (stream, people);
-stream.Close ();
+string xmlPath = Combine (CurrentDirectory, "people.xml");
+using FileStream xmlStream = File.Create (xmlPath);
+xs.Serialize (xmlStream, people);
+xmlStream.Close ();
 
-WriteLine("Written {0:N0} bytes of XML to {1}", arg0:new FileInfo(path).Length, arg1:path);
+WriteLine("Written {0:N0} bytes of XML to {1}", arg0:new FileInfo(xmlPath).Length, arg1:xmlPath);
 WriteLine();
-WriteLine(File.ReadAllText(path));
+WriteLine(File.ReadAllText(xmlPath));
 
 ForegroundColor = ConsoleColor.Cyan;
 
-using FileStream xmlLoad = File.Open(path, FileMode.Open);
+using FileStream xmlLoad = File.Open(xmlPath, FileMode.Open);
 List<Person>? loadedPeople = xs.Deserialize(xmlLoad) as List<Person>;
 if(loadedPeople is not null)
     foreach(Person p in loadedPeople)
     {
         WriteLine("{0} has {1} children.", p.LastName, p.Children?.Count??0);
     }
+
+ForegroundColor = ConsoleColor.Green;
+
+string jsonPath = Combine (CurrentDirectory, "people.json");
+using StreamWriter jsonStream = File.CreateText(jsonPath);
+Newtonsoft.Json.JsonSerializer jss = new ();
+jss.Serialize(jsonStream, people);
+jsonStream.Close ();
+
+WriteLine();
+WriteLine("Written {0:N0} bytes of JSON to: {1}", arg0:new FileInfo(jsonPath).Length, arg1:jsonPath);
+WriteLine(File.ReadAllText(jsonPath));
 
 ResetColor ();
