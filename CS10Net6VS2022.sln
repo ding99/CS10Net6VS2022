@@ -115,9 +115,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streams", "Ch09Files\Stream
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encodings", "Ch09Files\Encodings\Encodings.csproj", "{5993DD94-B7C6-47EB-AD6C-D91D47B09635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Ch09Files\Serialization\Serialization.csproj", "{D6DAF47D-9A7F-4B2E-8047-EFF831EF76AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization", "Ch09Files\Serialization\Serialization.csproj", "{D6DAF47D-9A7F-4B2E-8047-EFF831EF76AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithJson", "Ch09Files\WorkingWithJson\WorkingWithJson.csproj", "{A7B66CC3-4311-4723-80C7-3AEAABC9B95D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithJson", "Ch09Files\WorkingWithJson\WorkingWithJson.csproj", "{A7B66CC3-4311-4723-80C7-3AEAABC9B95D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch10EFCore", "Ch10EFCore", "{00282032-673C-4A0B-93FE-EAC2465DCA66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore", "Ch10EFCore\EFCore\EFCore.csproj", "{531A1E69-FE1C-430C-8B6E-29D43EF94A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -317,6 +321,10 @@ Global
 		{A7B66CC3-4311-4723-80C7-3AEAABC9B95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B66CC3-4311-4723-80C7-3AEAABC9B95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7B66CC3-4311-4723-80C7-3AEAABC9B95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531A1E69-FE1C-430C-8B6E-29D43EF94A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531A1E69-FE1C-430C-8B6E-29D43EF94A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531A1E69-FE1C-430C-8B6E-29D43EF94A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531A1E69-FE1C-430C-8B6E-29D43EF94A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -371,6 +379,7 @@ Global
 		{5993DD94-B7C6-47EB-AD6C-D91D47B09635} = {94507258-F759-43E1-B853-1C8F69AF646F}
 		{D6DAF47D-9A7F-4B2E-8047-EFF831EF76AC} = {94507258-F759-43E1-B853-1C8F69AF646F}
 		{A7B66CC3-4311-4723-80C7-3AEAABC9B95D} = {94507258-F759-43E1-B853-1C8F69AF646F}
+		{531A1E69-FE1C-430C-8B6E-29D43EF94A37} = {00282032-673C-4A0B-93FE-EAC2465DCA66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
