@@ -111,7 +111,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch09Files", "Ch09Files", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSystems", "Ch09Files\FileSystems\FileSystems.csproj", "{BCB36A7C-5613-4895-B163-19C9E7FBB4F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams", "Ch09Files\Streams\Streams.csproj", "{149143B3-7543-4E86-AE57-DE987146AEFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streams", "Ch09Files\Streams\Streams.csproj", "{149143B3-7543-4E86-AE57-DE987146AEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encodings", "Ch09Files\Encodings\Encodings.csproj", "{5993DD94-B7C6-47EB-AD6C-D91D47B09635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -299,6 +301,10 @@ Global
 		{149143B3-7543-4E86-AE57-DE987146AEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{149143B3-7543-4E86-AE57-DE987146AEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{149143B3-7543-4E86-AE57-DE987146AEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5993DD94-B7C6-47EB-AD6C-D91D47B09635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5993DD94-B7C6-47EB-AD6C-D91D47B09635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5993DD94-B7C6-47EB-AD6C-D91D47B09635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5993DD94-B7C6-47EB-AD6C-D91D47B09635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -350,6 +356,7 @@ Global
 		{C28A9DEF-D354-4316-B5DE-2EB05CAE9C8E} = {325058FD-719A-4393-B64C-39F27A1E3217}
 		{BCB36A7C-5613-4895-B163-19C9E7FBB4F5} = {94507258-F759-43E1-B853-1C8F69AF646F}
 		{149143B3-7543-4E86-AE57-DE987146AEFC} = {94507258-F759-43E1-B853-1C8F69AF646F}
+		{5993DD94-B7C6-47EB-AD6C-D91D47B09635} = {94507258-F759-43E1-B853-1C8F69AF646F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
