@@ -1,5 +1,6 @@
 ﻿using System.Xml.Serialization;
 using Packt.Shared;
+using NewJson = System.Text.Json.JsonSerializer;
 
 using static System.Console;
 using static System.Environment;
@@ -69,5 +70,15 @@ jsonStream.Close ();
 WriteLine();
 WriteLine("Written {0:N0} bytes of JSON to: {1}", arg0:new FileInfo(jsonPath).Length, arg1:jsonPath);
 WriteLine(File.ReadAllText(jsonPath));
+
+ForegroundColor = ConsoleColor.DarkYellow;
+
+using FileStream jsonLoad = File.Open(jsonPath, FileMode.Open);
+List<Person>? jsonloadedPeople = await NewJson.DeserializeAsync(utf8Json:jsonLoad, returnType:typeof(List<Person>)) as List<Person>;
+if(jsonloadedPeople is not null)
+    foreach(Person p in jsonloadedPeople)
+    {
+        WriteLine("{0} has {1} children.", p.LastName, p.Children?.Count??0);
+    }
 
 ResetColor ();
