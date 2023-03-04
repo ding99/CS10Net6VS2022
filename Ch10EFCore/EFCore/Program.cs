@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine ("Hello, World!");
+﻿using Packt.Shared;
+
+using static System.Console;
+
+ForegroundColor = ConsoleColor.Yellow;
+
+WriteLine($"Using {ProjectConstants.DatabaseProvider} database provider.");
+
+ResetColor ();
+
