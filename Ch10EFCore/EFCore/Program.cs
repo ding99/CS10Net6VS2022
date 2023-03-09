@@ -7,4 +7,3 @@ ForegroundColor = ConsoleColor.Yellow;
 WriteLine($"Using {ProjectConstants.DatabaseProvider} database provider.");
 
 ResetColor ();
-
