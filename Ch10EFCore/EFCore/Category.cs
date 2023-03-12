@@ -5,7 +5,7 @@ namespace Packt.Shared;
 public class Category
 {
     public int CategoryId { get; set; }
-    public string? CategeryName { get; set; }
+    public string? CategoryName { get; set; }
     [Column(TypeName = "ntext")]
     public string? Description { get; set; }
 

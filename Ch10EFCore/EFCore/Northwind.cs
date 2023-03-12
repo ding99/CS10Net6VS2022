@@ -28,7 +28,7 @@ public class Northwind : DbContext
     protected override void OnModelCreating (ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category> ()
-            .Property (category => category.CategeryName)
+            .Property (category => category.CategoryName)
             .IsRequired ()
             .HasMaxLength (15);
         if (ProjectConstants.DatabaseProvider == "SQLite")
