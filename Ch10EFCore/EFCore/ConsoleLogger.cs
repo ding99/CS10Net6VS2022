@@ -41,16 +41,18 @@ public class ConsoleLogger : ILogger
 
     public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception, string> formatter)
     {
-        Write($"Level: {logLevel}, EventId: {eventId.Id}");
-        if(state != null)
+        if (eventId.Id == 20100)
         {
-            Write ($", State: {state}");
+            Write ($"Level: {logLevel}, EventId: {eventId.Id}");
+            if (state != null)
+            {
+                Write ($", State: {state}");
+            }
+            if (exception != null)
+            {
+                Write ($", Exception: {exception.Message}");
+            }
+            WriteLine ();
         }
-        if(exception != null)
-        {
-            Write($", Exception: {exception.Message}");
-        }
-        WriteLine(
-            );
     }
 }

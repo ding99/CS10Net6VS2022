@@ -12,14 +12,18 @@ WriteLine ($"Using {ProjectConstants.DatabaseProvider} database provider.");
 
 ForegroundColor = ConsoleColor.Yellow; QueryingCategories ();
 ForegroundColor = ConsoleColor.Cyan; FilteredInclude ();
-ForegroundColor = ConsoleColor.Yellow; QueryingProducts ();
+ForegroundColor = ConsoleColor.DarkYellow; QueryingProducts ();
 
 ResetColor ();
 
 static void QueryingCategories ()
 {
     using Northwind db = new ();
-    WriteLine("Categories and how many products they have:");
+
+    ILoggerFactory loggerFactory = db.GetService<ILoggerFactory> ();
+    loggerFactory.AddProvider (new ConsoleLoggerProvider ());
+
+    WriteLine ("Categories and how many products they have:");
     IQueryable<Category>? categories = db.Categories?.Include (c => c.Products);
     if(categories is null)
     {
