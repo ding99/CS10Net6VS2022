@@ -2,5 +2,5 @@
 
 public class ProjectConstants
 {
-    public const string DatabaseProvider = "SQLite"; // or "SQLServer"
+    public const string DatabaseProvider = /*"SQLite"; // or*/ "SQLServer";
 }

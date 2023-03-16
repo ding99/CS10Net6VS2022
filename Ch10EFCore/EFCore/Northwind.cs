@@ -31,6 +31,10 @@ public class Northwind : DbContext
             .Property (category => category.CategoryName)
             .IsRequired ()
             .HasMaxLength (15);
+
+        modelBuilder.Entity<Product> ()
+            .HasQueryFilter (p => !p.Discontinued);
+
         if (ProjectConstants.DatabaseProvider == "SQLite")
             modelBuilder.Entity<Product> ()
                 .Property (product => product.Cost)
