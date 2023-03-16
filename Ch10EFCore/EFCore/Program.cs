@@ -13,6 +13,7 @@ WriteLine ($"Using {ProjectConstants.DatabaseProvider} database provider.");
 ForegroundColor = ConsoleColor.Yellow; QueryingCategories ();
 ForegroundColor = ConsoleColor.Cyan; FilteredInclude ();
 ForegroundColor = ConsoleColor.DarkYellow; QueryingProducts ();
+ForegroundColor = ConsoleColor.Green; QueryingWithLike ();
 
 ResetColor ();
 
@@ -87,4 +88,25 @@ static void QueryingProducts ()
     foreach(Product p in products)
         WriteLine("{0}: {1} costs {2:$#.##0.00} and has {3} in stock.",
             p.ProductId, p.ProductName, p.Cost, p.Stock);
+}
+
+static void QueryingWithLike ()
+{
+    using Northwind db = new ();
+
+    ILoggerFactory factory = db.GetService<ILoggerFactory> ();
+    factory.AddProvider (new ConsoleLoggerProvider ());
+    
+    WriteLine ("Enter part of a product name:(che)");
+    string? input = "che"; //ReadLine();
+    IQueryable<Product>? products = db.Products?.Where (p => EF.Functions.Like (p.ProductName, $"%{input}%"));
+
+    if(products is null)
+    {
+        Console.WriteLine("No products found.");
+        return;
+    }
+    
+    foreach(Product p in products)
+        Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}", p.ProductName, p.Stock, p.Discontinued);
 }
