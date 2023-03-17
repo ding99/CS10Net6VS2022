@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;  // Include extension method
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
