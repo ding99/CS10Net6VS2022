@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;  // Include extension method
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 using Packt.Shared;
 
@@ -25,14 +26,42 @@ static void QueryingCategories ()
     loggerFactory.AddProvider (new ConsoleLoggerProvider ());
 
     WriteLine ("Categories and how many products they have:");
-    IQueryable<Category>? categories = db.Categories;//?.Include (c => c.Products);
-    if(categories is null)
+    IQueryable<Category>? categories; // = db.Categories;//?.Include (c => c.Products);
+    db.ChangeTracker.LazyLoadingEnabled = false;
+    Write ("Enable eager loading? (Y/N):");
+    bool eagerloading = false;// (ReadKey ().Key == ConsoleKey.Y);
+    bool explicitloading = false;
+    WriteLine();
+
+    if (eagerloading)
+        categories = db.Categories?.Include (c => c.Products);
+    else
+    {
+        categories = db.Categories;
+        Write ("Enable explicit loading? (Y/N):");
+        explicitloading = true; // (ReadKey().Key == ConsoleKey.Y);
+        WriteLine();
+    }
+
+    if (categories is null)
     {
         WriteLine("No categories found.");
         return;
     }
-    foreach(Category c in categories)
-        WriteLine($"{c.CategoryName} has {c.Products.Count} products.");
+    int n = 0;
+    foreach (Category c in categories)
+    {
+        WriteLine ($"Explicitly load products for {c.CategoryName}? (Y/N):");
+        ConsoleKeyInfo key = (n++ % 3) == 0 ? new ConsoleKeyInfo((char)ConsoleKey.Y, ConsoleKey.Y, false, false, false) : new ConsoleKeyInfo ((char)ConsoleKey.N, ConsoleKey.N, false, false, false);//  ReadKey ();
+        //WriteLine();
+
+        if (key.Key == ConsoleKey.Y)
+        {
+            CollectionEntry<Category, Product> products = db.Entry (c).Collection (c2 => c2.Products);
+            if (!products.IsLoaded) products.Load ();
+        }
+        WriteLine ($"{c.CategoryName} has {c.Products.Count} products.");
+    }
 }
 
 static void FilteredInclude ()
