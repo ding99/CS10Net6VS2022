@@ -12,6 +12,8 @@ public class Northwind : DbContext
 
     protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.UseLazyLoadingProxies();
+
         if (ProjectConstants.DatabaseProvider == "SQLite")
         {
             string path = Path.Combine (Environment.CurrentDirectory, "Northwind.db");
@@ -31,6 +33,10 @@ public class Northwind : DbContext
             .Property (category => category.CategoryName)
             .IsRequired ()
             .HasMaxLength (15);
+
+        modelBuilder.Entity<Product> ()
+            .HasQueryFilter (p => !p.Discontinued);
+
         if (ProjectConstants.DatabaseProvider == "SQLite")
             modelBuilder.Entity<Product> ()
                 .Property (product => product.Cost)
