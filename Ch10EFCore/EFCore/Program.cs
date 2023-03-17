@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;  // Include extension method
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 using Packt.Shared;
 
@@ -13,6 +14,7 @@ WriteLine ($"Using {ProjectConstants.DatabaseProvider} database provider.");
 ForegroundColor = ConsoleColor.Yellow; QueryingCategories ();
 ForegroundColor = ConsoleColor.Cyan; FilteredInclude ();
 ForegroundColor = ConsoleColor.DarkYellow; QueryingProducts ();
+ForegroundColor = ConsoleColor.Green; QueryingWithLike ();
 
 ResetColor ();
 
@@ -24,14 +26,42 @@ static void QueryingCategories ()
     loggerFactory.AddProvider (new ConsoleLoggerProvider ());
 
     WriteLine ("Categories and how many products they have:");
-    IQueryable<Category>? categories = db.Categories?.Include (c => c.Products);
-    if(categories is null)
+    IQueryable<Category>? categories; // = db.Categories;//?.Include (c => c.Products);
+    db.ChangeTracker.LazyLoadingEnabled = false;
+    Write ("Enable eager loading? (Y/N):");
+    bool eagerloading = false;// (ReadKey ().Key == ConsoleKey.Y);
+    bool explicitloading = false;
+    WriteLine();
+
+    if (eagerloading)
+        categories = db.Categories?.Include (c => c.Products);
+    else
+    {
+        categories = db.Categories;
+        Write ("Enable explicit loading? (Y/N):");
+        explicitloading = true; // (ReadKey().Key == ConsoleKey.Y);
+        WriteLine();
+    }
+
+    if (categories is null)
     {
         WriteLine("No categories found.");
         return;
     }
-    foreach(Category c in categories)
-        WriteLine($"{c.CategoryName} has {c.Products.Count} products.");
+    int n = 0;
+    foreach (Category c in categories)
+    {
+        WriteLine ($"Explicitly load products for {c.CategoryName}? (Y/N):");
+        ConsoleKeyInfo key = (n++ % 3) == 0 ? new ConsoleKeyInfo((char)ConsoleKey.Y, ConsoleKey.Y, false, false, false) : new ConsoleKeyInfo ((char)ConsoleKey.N, ConsoleKey.N, false, false, false);//  ReadKey ();
+        //WriteLine();
+
+        if (key.Key == ConsoleKey.Y)
+        {
+            CollectionEntry<Category, Product> products = db.Entry (c).Collection (c2 => c2.Products);
+            if (!products.IsLoaded) products.Load ();
+        }
+        WriteLine ($"{c.CategoryName} has {c.Products.Count} products.");
+    }
 }
 
 static void FilteredInclude ()
@@ -76,6 +106,7 @@ static void QueryingProducts ()
     } while (!decimal.TryParse(input, out price));
 
     IQueryable<Product>? products = db.Products?
+        .TagWith("Products filtered by price and sorted.")
         .Where(product => product.Cost > price)
         .OrderByDescending(product => product.Cost);
     if(products is null)
@@ -86,4 +117,25 @@ static void QueryingProducts ()
     foreach(Product p in products)
         WriteLine("{0}: {1} costs {2:$#.##0.00} and has {3} in stock.",
             p.ProductId, p.ProductName, p.Cost, p.Stock);
+}
+
+static void QueryingWithLike ()
+{
+    using Northwind db = new ();
+
+    ILoggerFactory factory = db.GetService<ILoggerFactory> ();
+    factory.AddProvider (new ConsoleLoggerProvider ());
+    
+    WriteLine ("Enter part of a product name:(che)");
+    string? input = "che"; //ReadLine();
+    IQueryable<Product>? products = db.Products?.Where (p => EF.Functions.Like (p.ProductName, $"%{input}%"));
+
+    if(products is null)
+    {
+        Console.WriteLine("No products found.");
+        return;
+    }
+    
+    foreach(Product p in products)
+        Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}", p.ProductName, p.Stock, p.Discontinued);
 }
