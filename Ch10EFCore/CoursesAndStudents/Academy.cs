@@ -11,10 +11,10 @@ public class Academy : DbContext
 
     protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
     {
-        string path = Path.Combine (Environment.CurrentDirectory, "Academy.db");
-        WriteLine($"Using {path} database file.");
-        optionsBuilder.UseSqlite($"Filename={path}");
-        //optionsBuilder.UseSqlServer (@"Data Source=.;Initial Catalog=Academy;Integrated Security=true;MultipleActiveResultSets=true;");
+        //string path = Path.Combine (Environment.CurrentDirectory, "Academy.db");
+        //WriteLine($"Using {path} database file.");
+        //optionsBuilder.UseSqlite($"Filename={path}");
+        optionsBuilder.UseSqlServer (@"Data Source=.;Initial Catalog=Academy;Integrated Security=true;MultipleActiveResultSets=true;TrustServerCertificate=True");
     }
 
     protected override void OnModelCreating (ModelBuilder modelBuilder)
