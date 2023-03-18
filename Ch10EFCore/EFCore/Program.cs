@@ -16,6 +16,11 @@ ForegroundColor = ConsoleColor.Cyan; FilteredInclude ();
 ForegroundColor = ConsoleColor.DarkYellow; QueryingProducts ();
 ForegroundColor = ConsoleColor.Green; QueryingWithLike ();
 
+ForegroundColor = ConsoleColor.DarkCyan;
+if(AddProduct(categoryId:6, productName:"Bob's Burgers", price:500M))
+    Console.WriteLine("Add product successful.");
+ListProducts ();
+
 ResetColor ();
 
 static void QueryingCategories ()
@@ -138,4 +143,28 @@ static void QueryingWithLike ()
     
     foreach(Product p in products)
         Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}", p.ProductName, p.Stock, p.Discontinued);
+}
+
+static bool AddProduct(int categoryId, string productName, decimal? price)
+{
+    using Northwind db = new ();
+    Product p = new ()
+    {
+        CategoryId = categoryId,
+        ProductName = productName,
+        Cost = price
+    };
+    db.Products?.Add (p);
+    int affected = db.SaveChanges ();
+    return (affected == 1);
+}
+
+static void ListProducts ()
+{
+    using Northwind db = new ();
+    Console.WriteLine ("{0,-3} {1,-35} {2,8} {3,5} {4}",
+        "Id", "Product Name", "Cost", "Stock", "Disc.");
+    foreach (Product p in db.Products.OrderByDescending (product => product.Cost))
+        Console.WriteLine ("{0:000} {1,-35}, {2,8:$#,##0.00} {3,5} {4}",
+            p.ProductId, p.ProductName, p.Cost, p.Stock, p.Discontinued);
 }
