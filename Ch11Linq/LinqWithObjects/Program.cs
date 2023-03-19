@@ -3,13 +3,17 @@
 ForegroundColor = ConsoleColor.Yellow;
 
 string[] names = new[] { "Michael" , "Pam", "Jim", "Dwight", "Angela", "Kevin", "Toby", "Creed" };
-WriteLine("Deferred execution");
+Write ("Original:");
+foreach (string item in names) Write ($" {item}");
+WriteLine ();
 
-var query = names.Where (name => name.EndsWith ("m"));
-string[] result = query.ToArray ();
+WriteLine ("== Deferred execution");
+
+var query1 = names.Where (name => name.EndsWith ("m"));
+string[] result = query1.ToArray ();
 
 Write ("- query: ");
-foreach (string name in query)
+foreach (string name in query1)
 {
     Write($" {name}");
 }
@@ -23,7 +27,7 @@ foreach (string name in result)
 WriteLine ();
 
 Write ("- query: ");
-foreach (string name in query)
+foreach (string name in query1)
 {
     Write ($" {name}");
     names[2] = "Jimmy";  // change Jim to Jimmy
@@ -37,4 +41,15 @@ foreach (string name in result)
 }
 WriteLine ();
 
+ForegroundColor = ConsoleColor.Cyan;
+Write ("Performed Where:");
+var query = names.Where (new Func<string, bool> (NameLongerThanFour));
+foreach (string item in query) Write ($" {item}");
+WriteLine();
+
 ResetColor ();
+
+static bool NameLongerThanFour(string name)
+{
+    return name.Length > 4;
+}
