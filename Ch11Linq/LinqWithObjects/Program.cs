@@ -49,6 +49,21 @@ var query = names.Where (name => name.Length > 4);
 foreach (string item in query) Write ($" {item}");
 WriteLine();
 
+Write ("Performed Where & OrderBy:");
+query = names.Where (name => name.Length > 4).OrderBy(name => name.Length);
+foreach (string item in query) Write ($" {item}");
+WriteLine ();
+
+Write ("Performed Where & Descend:");
+query = names.Where (name => name.Length > 4).OrderByDescending (name => name.Length);
+foreach (string item in query) Write ($" {item}");
+WriteLine ();
+
+Write ("Performed Where & ThenBy:");
+query = names.Where (name => name.Length > 4).OrderBy (name => name.Length).ThenBy(name => name);
+foreach (string item in query) Write ($" {item}");
+WriteLine ();
+
 ResetColor ();
 
 //static bool NameLongerThanFour(string name)
