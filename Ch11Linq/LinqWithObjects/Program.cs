@@ -43,7 +43,8 @@ WriteLine ();
 
 ForegroundColor = ConsoleColor.Cyan;
 Write ("Performed Where:");
-var query = names.Where (new Func<string, bool> (NameLongerThanFour));
+//var query = names.Where (new Func<string, bool> (NameLongerThanFour));
+var query = names.Where (NameLongerThanFour);
 foreach (string item in query) Write ($" {item}");
 WriteLine();
 
