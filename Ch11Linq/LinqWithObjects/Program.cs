@@ -5,24 +5,35 @@ ForegroundColor = ConsoleColor.Yellow;
 string[] names = new[] { "Michael" , "Pam", "Jim", "Dwight", "Angela", "Kevin", "Toby", "Creed" };
 WriteLine("Deferred execution");
 
-var query1 = names.Where (name => name.EndsWith ("m"));
-var query2 = from name in names where name.EndsWith ("m") select name;
+var query = names.Where (name => name.EndsWith ("m"));
+string[] result = query.ToArray ();
 
-string[] result1 = query1.ToArray ();
-List<string> result2 = query2.ToList ();
-
-Write("- query1:");
-foreach (string name in query1)
+Write ("- query: ");
+foreach (string name in query)
 {
     Write($" {name}");
 }
 WriteLine();
 
-Write ("- query2:");
-foreach (string name in query2)
+Write ("- result:");
+foreach (string name in result)
+{
+    Write ($" {name}");
+}
+WriteLine ();
+
+Write ("- query: ");
+foreach (string name in query)
 {
     Write ($" {name}");
     names[2] = "Jimmy";  // change Jim to Jimmy
+}
+WriteLine ();
+
+Write ("- result:");
+foreach (string name in result)
+{
+    Write ($" {name}");
 }
 WriteLine ();
 
