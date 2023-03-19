@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;  // Include extension method
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Storage;  // IDbContextTransaction
 
 using Packt.Shared;
 
@@ -15,6 +16,22 @@ ForegroundColor = ConsoleColor.Yellow; QueryingCategories ();
 ForegroundColor = ConsoleColor.Cyan; FilteredInclude ();
 ForegroundColor = ConsoleColor.DarkYellow; QueryingProducts ();
 ForegroundColor = ConsoleColor.Green; QueryingWithLike ();
+
+ForegroundColor = ConsoleColor.DarkCyan;
+WriteLine ("-- Insert an entity");
+if (AddProduct (categoryId: 6, productName: "Bob's Burgers", price: 500M))
+    WriteLine ("Add product successful.");
+ListProducts ();
+ForegroundColor = ConsoleColor.Cyan;
+WriteLine ("-- Increase price");
+if(IncreaseProductPrice(productNameStartsWith:"Bob", amount: 20M))
+    WriteLine("Update product price successful.");
+ListProducts ();
+ForegroundColor = ConsoleColor.DarkCyan;
+WriteLine ("-- Delete an entity");
+int deleted = DeleteProducts (productNameStartsWith: "Bob");
+WriteLine($"{deleted} product(s) were deleted.");
+ListProducts ();
 
 ResetColor ();
 
@@ -53,7 +70,6 @@ static void QueryingCategories ()
     {
         WriteLine ($"Explicitly load products for {c.CategoryName}? (Y/N):");
         ConsoleKeyInfo key = (n++ % 3) == 0 ? new ConsoleKeyInfo((char)ConsoleKey.Y, ConsoleKey.Y, false, false, false) : new ConsoleKeyInfo ((char)ConsoleKey.N, ConsoleKey.N, false, false, false);//  ReadKey ();
-        //WriteLine();
 
         if (key.Key == ConsoleKey.Y)
         {
@@ -132,10 +148,65 @@ static void QueryingWithLike ()
 
     if(products is null)
     {
-        Console.WriteLine("No products found.");
+        WriteLine("No products found.");
         return;
     }
     
     foreach(Product p in products)
-        Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}", p.ProductName, p.Stock, p.Discontinued);
+        WriteLine("{0} has {1} units in stock. Discontinued? {2}", p.ProductName, p.Stock, p.Discontinued);
+}
+
+static bool AddProduct(int categoryId, string productName, decimal? price)
+{
+    using Northwind db = new ();
+    Product p = new ()
+    {
+        CategoryId = categoryId,
+        ProductName = productName,
+        Cost = price
+    };
+    db.Products?.Add (p);
+    int affected = db.SaveChanges ();
+    return (affected == 1);
+}
+
+static void ListProducts ()
+{
+    using Northwind db = new ();
+    WriteLine ("{0,-3} {1,-35} {2,8} {3,5} {4} (count:{5})",
+        "Id", "Product Name", "Cost", "Stock", "Disc.", db.Products?.Count());
+    foreach (Product p in db.Products.OrderByDescending (product => product.Cost))
+        WriteLine ("{0:000} {1,-35}, {2,8:$#,##0.00} {3,5} {4}",
+            p.ProductId, p.ProductName, p.Cost, p.Stock, p.Discontinued);
+}
+
+static bool IncreaseProductPrice(string productNameStartsWith, decimal amount)
+{
+    using Northwind db = new ();
+    Product updateProduct = db.Products.First (p => p.ProductName.StartsWith(productNameStartsWith));
+    updateProduct.Cost += amount;
+    int affected = db.SaveChanges ();
+    return (affected == 1);
+}
+
+static int DeleteProducts(string productNameStartsWith)
+{
+    using Northwind db = new ();
+    using IDbContextTransaction t = db.Database.BeginTransaction ();
+
+    Console.WriteLine("Transaction isolation level: {0}",
+        arg0:t.GetDbTransaction().IsolationLevel);
+
+    IQueryable<Product>? products = db.Products?.Where(
+        p => p.ProductName.StartsWith(productNameStartsWith));
+    if(products is null)
+    {
+        Console.WriteLine ("No products found to delete.");
+        return 0;
+    }
+    else
+        db.Products?.RemoveRange (products);
+    int affected = db.SaveChanges ();
+    t.Commit ();
+    return affected;
 }
