@@ -44,13 +44,14 @@ WriteLine ();
 ForegroundColor = ConsoleColor.Cyan;
 Write ("Performed Where:");
 //var query = names.Where (new Func<string, bool> (NameLongerThanFour));
-var query = names.Where (NameLongerThanFour);
+//var query = names.Where (NameLongerThanFour);
+var query = names.Where (name => name.Length > 4);
 foreach (string item in query) Write ($" {item}");
 WriteLine();
 
 ResetColor ();
 
-static bool NameLongerThanFour(string name)
-{
-    return name.Length > 4;
-}
+//static bool NameLongerThanFour(string name)
+//{
+//    return name.Length > 4;
+//}
