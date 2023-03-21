@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.Reflection.Metadata.Ecma335;
+using static System.Console;
 
 ForegroundColor = ConsoleColor.Yellow;
 
@@ -63,6 +64,26 @@ Write ("Performed Where & ThenBy:");
 query = names.Where (name => name.Length > 4).OrderBy (name => name.Length).ThenBy(name => name);
 foreach (string item in query) Write ($" {item}");
 WriteLine ();
+
+ForegroundColor = ConsoleColor.DarkYellow;
+
+WriteLine ("Filtering by type");
+List<Exception> exceptions = new ()
+{
+    new ArgumentException(),
+    new SystemException(),
+    new IndexOutOfRangeException(),
+    new InvalidOperationException(),
+    new NullReferenceException(),
+    new InvalidCastException(),
+    new OverflowException(),
+    new DivideByZeroException(),
+    new ApplicationException()
+};
+
+IEnumerable<ArithmeticException> arithmeticExceptionsQuery = exceptions.OfType<ArithmeticException> ();
+foreach(ArithmeticException exception in arithmeticExceptionsQuery)
+    Console.WriteLine(exception);
 
 ResetColor ();
 
