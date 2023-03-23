@@ -4,7 +4,7 @@ using Packt.Shared;
 using static System.Console;
 
 ForegroundColor = ConsoleColor.Yellow; FilterAndSort ();
-
+ForegroundColor = ConsoleColor.Cyan;JoinCategoriesAndProducts ();
 
 ResetColor ();
 
@@ -15,10 +15,10 @@ static void FilterAndSort ()
     IQueryable<Product> filteredProducts = allProducts.Where (p => p.UnitPrice < 10M);
     IOrderedQueryable<Product> sortedAndFilteredProducts = filteredProducts.OrderByDescending(p => p.UnitPrice);
 
-    Console.WriteLine("Products that cost less than $10:");
-    foreach(Product p in sortedAndFilteredProducts)
-        Console.WriteLine("{0}: {1} costs {2:$#.##0.00}", p.ProductId, p.ProductName, p.UnitPrice);
-    Console.WriteLine();
+    //Console.WriteLine("Products that cost less than $10:");
+    //foreach(Product p in sortedAndFilteredProducts)
+    //    Console.WriteLine("{0}: {1} costs {2:$#.##0.00}", p.ProductId, p.ProductName, p.UnitPrice);
+    //Console.WriteLine();
 
     var projectedProducts = sortedAndFilteredProducts.Select (p => new
     {
@@ -31,6 +31,20 @@ static void FilterAndSort ()
     foreach (var p in projectedProducts)
         Console.WriteLine ("{0}: {1} costs {2:$#.##0.00}", p.ProductId, p.ProductName, p.UnitPrice);
     Console.WriteLine ();
+}
 
+static void JoinCategoriesAndProducts ()
+{
+    using Northwind db = new ();
+    var queryJoin = db.Categories?.Join (
+        inner: db.Products!,
+        outerKeySelector: category => category.CategoryId,
+        innerKeySelector: product => product.CategoryId,
+        resultSelector: (c, p) => new { c.CategoryName, p.ProductName, p.ProductId })
+        .OrderBy(cp => cp.CategoryName);
+
+    foreach (var item in queryJoin!)
+        Console.WriteLine ("{0}: {1} is in {2}.",
+            arg0: item.ProductId, arg1: item.ProductName, arg2: item.CategoryName);
 }
 
