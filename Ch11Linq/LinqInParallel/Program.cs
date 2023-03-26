@@ -11,8 +11,14 @@ watch.Start();
 int max = 45;
 IEnumerable<int> numbers = Enumerable.Range(start:1, count:max);
 WriteLine($"Calculating Fibonacci sequence up to {max}. Please wait...");
+//int[] fibonacciNumbers = numbers
+//    .Select(n => Fibonacci(n))
+//    .ToArray();
 int[] fibonacciNumbers = numbers
-    .Select(n => Fibonacci(n)).ToArray();
+    .AsParallel()
+    .Select(n => Fibonacci(n))
+    .OrderBy(n => n)
+    .ToArray();
 watch.Stop();
 WriteLine("{0:#,##0} elapsed milliseconds.",
     arg0:watch.ElapsedMilliseconds);
