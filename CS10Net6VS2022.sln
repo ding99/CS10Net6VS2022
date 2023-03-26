@@ -133,7 +133,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqWithSets", "Ch11Linq\Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqWithEFCore", "Ch11Linq\LinqWithEFCore\LinqWithEFCore.csproj", "{79358E88-5492-4FA9-8E99-1B7716F5D932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqInParallel", "Ch11Linq\LinqInParallel\LinqInParallel.csproj", "{53186714-746C-46F2-BD17-2A8404F6DED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqInParallel", "Ch11Linq\LinqInParallel\LinqInParallel.csproj", "{53186714-746C-46F2-BD17-2A8404F6DED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch12MultiTasks", "Ch12MultiTasks", "{10D4F15D-4237-453E-BBAF-021E5D2F2EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
