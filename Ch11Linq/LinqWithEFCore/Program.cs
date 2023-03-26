@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
+
 using Packt.Shared;
 
 using static System.Console;
@@ -7,6 +9,8 @@ ForegroundColor = ConsoleColor.Yellow; FilterAndSort();
 ForegroundColor = ConsoleColor.Cyan;JoinCategoriesAndProducts();
 ForegroundColor = ConsoleColor.DarkYellow; GroupJoinCategoriedAndProducts();
 ForegroundColor = ConsoleColor.DarkCyan; CustomExtensionMethods();
+ForegroundColor = ConsoleColor.Green; OutputProductsAsXml();
+ForegroundColor = ConsoleColor.Yellow; ProcessSettings();
 
 ResetColor ();
 
@@ -92,4 +96,32 @@ static void CustomExtensionMethods()
     WriteLine("Median unit price: {0:$#,##0.00}", db.Products?.Median(p => p.UnitPrice));
     WriteLine("Mode units in stock: {0:N0}", db.Products?.Mode(p => p.UnitsInStock));
     WriteLine("Mode unit price: {0:$#,##0.00}", db.Products?.Mode(p => p.UnitPrice));
+}
+
+static void OutputProductsAsXml()
+{
+    using Northwind db = new();
+
+    Product[]? productsArray = db.Products?.ToArray();
+    XElement xml = new("products",
+        from p in productsArray
+        select new XElement("products",
+        new XAttribute("id", p.ProductId),
+        new XAttribute("price", p.UnitPrice!),
+        new XAttribute("name", p.ProductName)));
+    Console.WriteLine(xml.ToString());
+}
+
+static void ProcessSettings()
+{
+    XDocument doc = XDocument.Load("settings.xml");
+    var appSettings = doc.Descendants("appSettings")
+        .Descendants("add")
+        .Select(node => new
+        {
+            Key = node.Attribute("key")?.Value,
+            Value = node.Attribute("value")?.Value
+        }).ToArray();
+    foreach(var item in appSettings)
+        Console.WriteLine($"{item.Key}: {item.Value}");
 }
