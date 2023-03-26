@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
+
 using Packt.Shared;
 
 using static System.Console;
@@ -7,6 +9,7 @@ ForegroundColor = ConsoleColor.Yellow; FilterAndSort();
 ForegroundColor = ConsoleColor.Cyan;JoinCategoriesAndProducts();
 ForegroundColor = ConsoleColor.DarkYellow; GroupJoinCategoriedAndProducts();
 ForegroundColor = ConsoleColor.DarkCyan; CustomExtensionMethods();
+ForegroundColor = ConsoleColor.Green; OutputProductsAsXml();
 
 ResetColor ();
 
@@ -92,4 +95,18 @@ static void CustomExtensionMethods()
     WriteLine("Median unit price: {0:$#,##0.00}", db.Products?.Median(p => p.UnitPrice));
     WriteLine("Mode units in stock: {0:N0}", db.Products?.Mode(p => p.UnitsInStock));
     WriteLine("Mode unit price: {0:$#,##0.00}", db.Products?.Mode(p => p.UnitPrice));
+}
+
+static void OutputProductsAsXml()
+{
+    using Northwind db = new();
+
+    Product[]? productsArray = db.Products?.ToArray();
+    XElement xml = new("products",
+        from p in productsArray
+        select new XElement("products",
+        new XAttribute("id", p.ProductId),
+        new XAttribute("price", p.UnitPrice!),
+        new XAttribute("name", p.ProductName)));
+    Console.WriteLine(xml.ToString());
 }
