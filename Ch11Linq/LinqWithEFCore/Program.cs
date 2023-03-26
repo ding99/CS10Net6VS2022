@@ -10,6 +10,7 @@ ForegroundColor = ConsoleColor.Cyan;JoinCategoriesAndProducts();
 ForegroundColor = ConsoleColor.DarkYellow; GroupJoinCategoriedAndProducts();
 ForegroundColor = ConsoleColor.DarkCyan; CustomExtensionMethods();
 ForegroundColor = ConsoleColor.Green; OutputProductsAsXml();
+ForegroundColor = ConsoleColor.Yellow; ProcessSettings();
 
 ResetColor ();
 
@@ -109,4 +110,18 @@ static void OutputProductsAsXml()
         new XAttribute("price", p.UnitPrice!),
         new XAttribute("name", p.ProductName)));
     Console.WriteLine(xml.ToString());
+}
+
+static void ProcessSettings()
+{
+    XDocument doc = XDocument.Load("settings.xml");
+    var appSettings = doc.Descendants("appSettings")
+        .Descendants("add")
+        .Select(node => new
+        {
+            Key = node.Attribute("key")?.Value,
+            Value = node.Attribute("value")?.Value
+        }).ToArray();
+    foreach(var item in appSettings)
+        Console.WriteLine($"{item.Key}: {item.Value}");
 }
