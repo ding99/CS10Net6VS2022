@@ -143,7 +143,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitoringApp", "Ch12MultiT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarking", "Ch12MultiTasks\Benchmarking\Benchmarking.csproj", "{BCC2604B-4940-4510-BA04-AAB693C517E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Ch12MultiTasks\Tasks\Tasks.csproj", "{951EB0D9-78F0-4596-9492-8D4F296AB81F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks", "Ch12MultiTasks\Tasks\Tasks.csproj", "{951EB0D9-78F0-4596-9492-8D4F296AB81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedAndChildTasks", "Ch12MultiTasks\NestedAndChildTasks\NestedAndChildTasks.csproj", "{652B991F-4D75-4CC4-B078-19C3E3A421F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -383,6 +385,10 @@ Global
 		{951EB0D9-78F0-4596-9492-8D4F296AB81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{951EB0D9-78F0-4596-9492-8D4F296AB81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{951EB0D9-78F0-4596-9492-8D4F296AB81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652B991F-4D75-4CC4-B078-19C3E3A421F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652B991F-4D75-4CC4-B078-19C3E3A421F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652B991F-4D75-4CC4-B078-19C3E3A421F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652B991F-4D75-4CC4-B078-19C3E3A421F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -447,6 +453,7 @@ Global
 		{F0467BA0-B08F-43AC-877F-B02C12E12ED2} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 		{BCC2604B-4940-4510-BA04-AAB693C517E4} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 		{951EB0D9-78F0-4596-9492-8D4F296AB81F} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
+		{652B991F-4D75-4CC4-B078-19C3E3A421F5} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
