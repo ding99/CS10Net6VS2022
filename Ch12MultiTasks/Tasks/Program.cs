@@ -27,7 +27,8 @@ timer.Stop();
 ForegroundColor = ConsoleColor.DarkYellow;
 timer = Stopwatch.StartNew();
 WriteLine("Passing the result of one task as an input into another.");
-Task<string> taskServiceThenSProc = Task.Factory.StartNew(CallWebService) // returns Task<decimal>
+Task<string> taskServiceThenSProc = Task.Factory
+    .StartNew(CallWebService) // returns Task<decimal>
     .ContinueWith(previousTask => CallStoredProcedure(previousTask.Result));
 WriteLine($"Result: {taskServiceThenSProc.Result}");
 WriteLine($"{timer.ElapsedMilliseconds:#,##0}ms elapsed.");
