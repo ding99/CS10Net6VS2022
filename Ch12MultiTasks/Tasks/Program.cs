@@ -2,7 +2,7 @@
 
 using static System.Console;
 
-ForegroundColor = ConsoleColor.Yellow;
+ForegroundColor = ConsoleColor.Cyan;
 
 Stopwatch timer = Stopwatch.StartNew();
 WriteLine("Running methods synchronously on one thread.");
@@ -10,6 +10,15 @@ MethodA();
 MethodB();
 MethodC();
 WriteLine($"{timer.ElapsedMilliseconds:#,##0}ms elapsed.");
+
+ForegroundColor = ConsoleColor.Yellow;
+Stopwatch timer2 = Stopwatch.StartNew();
+WriteLine("Running methods asynchronously on multiple threads.");
+Task taskA = new(MethodA);
+taskA.Start();
+Task taskB = Task.Factory.StartNew(MethodB);
+Task taskC = Task.Run(MethodC);
+WriteLine($"{timer2.ElapsedMilliseconds:#,##0}ms elapsed.");
 
 ResetColor();
 
