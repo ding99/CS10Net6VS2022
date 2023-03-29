@@ -18,6 +18,7 @@ Task taskA = new(MethodA);
 taskA.Start();
 Task taskB = Task.Factory.StartNew(MethodB);
 Task taskC = Task.Run(MethodC);
+Task.WaitAll(new []{taskA, taskB, taskC});
 WriteLine($"{timer2.ElapsedMilliseconds:#,##0}ms elapsed.");
 
 ResetColor();
