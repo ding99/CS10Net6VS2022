@@ -13,6 +13,7 @@ Task.WaitAll(new[] {a, b });
 WriteLine();
 WriteLine($"Results:{SharedObjects.Message}");
 WriteLine($"{watch.ElapsedMilliseconds:N0} elapsed milliseconds.");
+WriteLine($"{SharedObjects.Counter} string modifications.");
 ResetColor();
 
 static void MethodA()
@@ -25,6 +26,7 @@ static void MethodA()
             {
                 Thread.Sleep(SharedObjects.Random.Next(2000));
                 SharedObjects.Message += "A";
+                Interlocked.Increment(ref SharedObjects.Counter);
                 Write(".");
             }
         }
@@ -49,6 +51,7 @@ static void MethodB()
             {
                 Thread.Sleep(SharedObjects.Random.Next(2000));
                 SharedObjects.Message += "B";
+                Interlocked.Increment(ref SharedObjects.Counter);
                 Write(".");
             }
         }
@@ -68,4 +71,5 @@ static class SharedObjects
     public static Random Random = new();
     public static string? Message; // a shared resource
     public static object Conch = new();
+    public static int Counter; // another shared resource
 }
