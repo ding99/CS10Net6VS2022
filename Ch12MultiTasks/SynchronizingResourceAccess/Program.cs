@@ -17,21 +17,27 @@ ResetColor();
 
 static void MethodA()
 {
-    for(int i = 0; i < 5; i++)
+    lock (SharedObjects.Conch)
     {
-        Thread.Sleep(SharedObjects.Random.Next(2000));
-        SharedObjects.Message += "A";
-        Write(".");
+        for (int i = 0; i < 5; i++)
+        {
+            Thread.Sleep(SharedObjects.Random.Next(2000));
+            SharedObjects.Message += "A";
+            Write(".");
+        }
     }
 }
 
 static void MethodB()
 {
-    for(int i =0; i < 5; i++)
+    lock (SharedObjects.Conch)
     {
-        Thread.Sleep(SharedObjects.Random.Next(2000));
-        SharedObjects.Message += "B";
-        Write(".");
+        for (int i = 0; i < 5; i++)
+        {
+            Thread.Sleep(SharedObjects.Random.Next(2000));
+            SharedObjects.Message += "B";
+            Write(".");
+        }
     }
 }
 
@@ -39,4 +45,5 @@ static class SharedObjects
 {
     public static Random Random = new();
     public static string? Message; // a shared resource
+    public static object Conch = new();
 }
