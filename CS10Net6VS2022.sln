@@ -151,6 +151,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchronizingResourceAccess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConsole", "Ch12MultiTasks\AsyncConsole\AsyncConsole.csproj", "{08F3EB6A-03C5-4ABF-8F0D-93FDFBB8157F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfResponsive", "Ch12MultiTasks\WpfResponsive\WpfResponsive.csproj", "{A7709479-60A6-4CBD-8AFA-7E0B8768454E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncEnumerable", "Ch12MultiTasks\AsyncEnumerable\AsyncEnumerable.csproj", "{A14BFA72-FDE7-475D-BC11-1505F677F628}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -401,6 +405,14 @@ Global
 		{08F3EB6A-03C5-4ABF-8F0D-93FDFBB8157F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08F3EB6A-03C5-4ABF-8F0D-93FDFBB8157F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08F3EB6A-03C5-4ABF-8F0D-93FDFBB8157F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7709479-60A6-4CBD-8AFA-7E0B8768454E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7709479-60A6-4CBD-8AFA-7E0B8768454E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7709479-60A6-4CBD-8AFA-7E0B8768454E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7709479-60A6-4CBD-8AFA-7E0B8768454E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14BFA72-FDE7-475D-BC11-1505F677F628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14BFA72-FDE7-475D-BC11-1505F677F628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14BFA72-FDE7-475D-BC11-1505F677F628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14BFA72-FDE7-475D-BC11-1505F677F628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -468,6 +480,8 @@ Global
 		{652B991F-4D75-4CC4-B078-19C3E3A421F5} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 		{B5A2A40A-AB8A-4796-B79A-C233547A7150} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 		{08F3EB6A-03C5-4ABF-8F0D-93FDFBB8157F} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
+		{A7709479-60A6-4CBD-8AFA-7E0B8768454E} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
+		{A14BFA72-FDE7-475D-BC11-1505F677F628} = {10D4F15D-4237-453E-BBAF-021E5D2F2EFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC2F399-09C1-424D-BD39-E94556226C03}
