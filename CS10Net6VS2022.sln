@@ -155,6 +155,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfResponsive", "Ch12MultiT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncEnumerable", "Ch12MultiTasks\AsyncEnumerable\AsyncEnumerable.csproj", "{A14BFA72-FDE7-475D-BC11-1505F677F628}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch13App", "Ch13App", "{197F35BD-FADC-4974-A20F-583DE81B87CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
