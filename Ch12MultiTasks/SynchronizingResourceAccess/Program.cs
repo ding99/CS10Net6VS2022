@@ -17,27 +17,49 @@ ResetColor();
 
 static void MethodA()
 {
-    lock (SharedObjects.Conch)
+    try
     {
-        for (int i = 0; i < 5; i++)
+        if (Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(15)))
         {
-            Thread.Sleep(SharedObjects.Random.Next(2000));
-            SharedObjects.Message += "A";
-            Write(".");
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(SharedObjects.Random.Next(2000));
+                SharedObjects.Message += "A";
+                Write(".");
+            }
         }
+        else
+        {
+            WriteLine("Method A timed out when entering a monitor on conch.");
+        }
+    }
+    finally
+    {
+        Monitor.Exit(SharedObjects.Conch);
     }
 }
 
 static void MethodB()
 {
-    lock (SharedObjects.Conch)
+    try
     {
-        for (int i = 0; i < 5; i++)
+        if (Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(15)))
         {
-            Thread.Sleep(SharedObjects.Random.Next(2000));
-            SharedObjects.Message += "B";
-            Write(".");
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(SharedObjects.Random.Next(2000));
+                SharedObjects.Message += "B";
+                Write(".");
+            }
         }
+        else
+        {
+            WriteLine("Method B timed out when entering a monitor on conch.");
+        }
+    }
+    finally
+    {
+        Monitor.Exit(SharedObjects.Conch);
     }
 }
 
